@@ -8,14 +8,27 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    void CalculateMovementVector()
+    Vector3 GetMovementVector()
     {
+        Vector3 movementVector = Vector3.zero;
 
+        movementVector = new Vector3(InputManager.Instance.HorizontalAxis, 0, InputManager.Instance.VerticalAxis);
+
+        if (movementVector.magnitude > 1)
+            movementVector = movementVector.normalized;
+
+        return movementVector;
     }
 
     void MovePlayer()
     {
+        rb.velocity = GetMovementVector() * stats.MovementSpeed;
+    }
 
+    void RotatePlayer()
+    {
+        if(GetMovementVector() != Vector3.zero)
+            transform.forward = GetMovementVector();
     }
 
     private void Awake()
@@ -23,8 +36,13 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void LateUpdate()
+    {
+        RotatePlayer();
+    }
+
     private void FixedUpdate()
     {
-        
+        MovePlayer();
     }
 }
