@@ -35,9 +35,6 @@ public class PickupObjects : MonoBehaviour
 
     void PickUpObject()
     {
-        if (CanPickUpObject() == false)
-            return;
-
         objectInRange.GetComponent<BoxCollider>().enabled = false;
         pickedUpRigidbody = objectInRange.gameObject.GetComponent<Rigidbody>();
         pickedUpRigidbody.isKinematic = true;
@@ -45,8 +42,24 @@ public class PickupObjects : MonoBehaviour
         objectInRange.transform.localPosition = Vector3.zero;
     }
 
+    void DropObject()
+    {
+        objectInRange.GetComponent<BoxCollider>().enabled = true;
+        pickedUpRigidbody.isKinematic = false;
+        objectInRange.transform.parent = null;
+        pickedUpRigidbody = null;
+    }
+
+    void PickUpOrDropObject()
+    {
+        if (CanPickUpObject())
+            PickUpObject();
+        else if (pickedUpRigidbody != null)
+            DropObject();
+    }
+
     private void Awake()
     {
-        InputManager.Instance.OnPickUpButtonPressed += PickUpObject;
+        InputManager.Instance.OnPickUpButtonPressed += PickUpOrDropObject;
     }
 }
