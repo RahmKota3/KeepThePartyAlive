@@ -293,3 +293,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickedUpObjectParent: {fileID: 4434389408707871630}
+  stats: {fileID: 11400000, guid: 83e3f9c1478cb3844852c4f9c1188743, type: 2}

@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     public float VerticalAxis { get; private set; }
 
     public Action OnPickUpButtonPressed;
+    public Action OnThrowButtonPressed;
     public Action OnRestartButtonPressed;
 
     void CheckForInput()
@@ -20,6 +21,9 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("PickUp"))
             OnPickUpButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("Throw"))
+            OnThrowButtonPressed?.Invoke();
 
         if (Input.GetButtonDown("Restart"))
             OnRestartButtonPressed?.Invoke();
