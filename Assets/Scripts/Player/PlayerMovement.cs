@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] PlayerStats stats;
 
     Rigidbody rb;
+    PlayerAnimations animator;
 
     Vector3 GetMovementVector()
     {
@@ -23,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         rb.velocity = GetMovementVector() * stats.MovementSpeed;
+
+        if (rb.velocity.magnitude != 0)
+            animator.ActivateAnimation(AnimationType.Walking);
     }
 
     void RotatePlayer()
