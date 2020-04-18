@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<PlayerAnimations>();
     }
 
     private void LateUpdate()

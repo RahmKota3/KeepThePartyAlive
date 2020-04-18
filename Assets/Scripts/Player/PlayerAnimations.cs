@@ -14,7 +14,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         if(anim == null)
         {
-            Debug.Log("No animator assigned.");
+            //Debug.Log("No animator assigned.");
             return;
         }
 
