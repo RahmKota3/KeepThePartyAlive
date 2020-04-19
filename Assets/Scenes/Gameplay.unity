@@ -5342,8 +5342,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.51052547, y: -0.000002702179, z: 0.000004533158, w: -0.8598627}
-  m_LocalPosition: {x: -90, y: 14.8, z: -32.07}
+  m_LocalRotation: {x: -0.5149423, y: -0.0000027684644, z: 0.000004600848, w: -0.8572249}
+  m_LocalPosition: {x: -90, y: 10.47, z: -29.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5448,8 +5448,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983774006}
-  m_LocalRotation: {x: -0.51052547, y: -0.000002702179, z: 0.000004533158, w: -0.8598627}
-  m_LocalPosition: {x: -90, y: 14.8, z: -32.07}
+  m_LocalRotation: {x: -0.5149423, y: -0.0000027684644, z: 0.000004600848, w: -0.8572249}
+  m_LocalPosition: {x: -90, y: 10.47, z: -29.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 709540209}
@@ -5797,16 +5797,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7975415351520523756, guid: c4c077f18d2400343a619d40b1bda560,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 14.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7975415351520523756, guid: c4c077f18d2400343a619d40b1bda560,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.93
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4c077f18d2400343a619d40b1bda560, type: 3}
 --- !u!114 &7870037588234526409 stripped
@@ -5844,6 +5834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: QuestManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798533202521958647, guid: 6f3b6e2ef83897545b3f228e30888f99,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8798533202521958640, guid: 6f3b6e2ef83897545b3f228e30888f99,
         type: 3}

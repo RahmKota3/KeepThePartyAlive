@@ -25,9 +25,14 @@ public class PlayerMovement : MonoBehaviour
     void MovePlayer()
     {
         rb.velocity = GetMovementVector() * stats.MovementSpeed;
+    }
 
+    void ActivateAppropriateAnimations()
+    {
         if (rb.velocity.magnitude != 0)
             animator.ActivateAnimation(AnimationType.Walking);
+        else
+            animator.ActivateAnimation(AnimationType.Idle);
     }
 
     void RotateModel()
@@ -45,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     private void LateUpdate()
     {
         RotateModel();
+        ActivateAppropriateAnimations();
     }
 
     private void FixedUpdate()

@@ -23,7 +23,7 @@ public class QuestManager : MonoBehaviour
     Quest GetRandomizedQuest()
     {
         QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-            (int)QuestType.ChangeMusic, (int)QuestType.Basketball }, new List<int> { 60, 30, 10 });
+            (int)QuestType.ChangeMusic, (int)QuestType.Basketball }, new List<int> { 50, 30, 20 });
 
         return new Quest(typeOfQuest, timeBeforeQuestFail, 
             (PickupableObjectType.Beer));

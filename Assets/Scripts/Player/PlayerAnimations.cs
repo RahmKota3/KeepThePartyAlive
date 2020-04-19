@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AnimationType { Walking, PickingUp, Dancing, Drinking, Waiting, Nervous }
+public enum AnimationType { Idle, Walking, PickingUp, Dancing, Drinking, Waiting, Nervous }
 
 public class PlayerAnimations : MonoBehaviour
 {
@@ -31,6 +31,7 @@ public class PlayerAnimations : MonoBehaviour
 
     void SetUpAnimationDictionary()
     {
+        animationTriggerName[AnimationType.Idle] = "Idle";
         animationTriggerName[AnimationType.Walking] = "Walking";
         animationTriggerName[AnimationType.Dancing] = "Dancing";
         animationTriggerName[AnimationType.Waiting] = "Waiting";
