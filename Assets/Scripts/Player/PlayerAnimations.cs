@@ -20,13 +20,25 @@ public class PlayerAnimations : MonoBehaviour
 
         if(type == AnimationType.Walking)
         {
+            SetAllAnimationBoolsToFalse();
+            anim.SetBool(animationTriggerName[type], true);
+        }
+        else if(type == AnimationType.Idle)
+        {
+            SetAllAnimationBoolsToFalse();
             anim.SetBool(animationTriggerName[type], true);
         }
         else
         {
-            anim.SetBool(animationTriggerName[AnimationType.Walking], false);
+            SetAllAnimationBoolsToFalse();
             anim.SetTrigger(animationTriggerName[type]);
         }
+    }
+
+    void SetAllAnimationBoolsToFalse()
+    {
+        anim.SetBool(animationTriggerName[AnimationType.Idle], false);
+        anim.SetBool(animationTriggerName[AnimationType.Walking], false);
     }
 
     void SetUpAnimationDictionary()
@@ -35,6 +47,7 @@ public class PlayerAnimations : MonoBehaviour
         animationTriggerName[AnimationType.Walking] = "Walking";
         animationTriggerName[AnimationType.Dancing] = "Dancing";
         animationTriggerName[AnimationType.Waiting] = "Waiting";
+        animationTriggerName[AnimationType.PickingUp] = "PickUp";
     }
 
     private void Awake()

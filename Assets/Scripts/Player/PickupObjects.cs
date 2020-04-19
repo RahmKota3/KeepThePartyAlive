@@ -13,6 +13,8 @@ public class PickupObjects : MonoBehaviour
     PickupableObjectType pickedUpObjectType = PickupableObjectType.None;
     List<GameObject> objectsInRange = new List<GameObject>();
 
+    PlayerAnimations playerAnimations;
+
     public Action<PickupableObjectType> OnPickUp;
     public Action<PickupableObjectType> OnDrop;
 
@@ -58,6 +60,8 @@ public class PickupObjects : MonoBehaviour
         pickedUpObjectType = pickedUpRigidbody.gameObject.GetComponent<PickupableObjects>().ObjectType;
 
         OnPickUp?.Invoke(pickedUpObjectType);
+
+        playerAnimations.ActivateAnimation(AnimationType.PickingUp);
     }
 
     void DropObject()
@@ -92,6 +96,8 @@ public class PickupObjects : MonoBehaviour
 
     private void Awake()
     {
+        playerAnimations = GetComponent<PlayerAnimations>();
+
         InputManager.Instance.OnPickUpButtonPressed += PickUpOrDropObject;
         InputManager.Instance.OnThrowButtonPressed += ThrowObject;
     }
