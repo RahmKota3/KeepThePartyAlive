@@ -7,6 +7,7 @@ public class PickupObjects : MonoBehaviour
 {
     [SerializeField] Transform pickedUpObjectParent;
     [SerializeField] PlayerStats stats;
+    [SerializeField] Transform playerModel;
 
     Rigidbody pickedUpRigidbody = null;
     PickupableObjectType pickedUpObjectType = PickupableObjectType.None;
@@ -64,7 +65,7 @@ public class PickupObjects : MonoBehaviour
         pickedUpRigidbody.gameObject.GetComponent<BoxCollider>().enabled = true;
         pickedUpRigidbody.isKinematic = false;
         pickedUpRigidbody.gameObject.transform.parent = null;
-        pickedUpRigidbody.AddForce(transform.forward * stats.DropForce);
+        pickedUpRigidbody.AddForce(playerModel.forward * stats.DropForce);
         pickedUpRigidbody = null;
         pickedUpObjectType = PickupableObjectType.None;
 
@@ -78,7 +79,7 @@ public class PickupObjects : MonoBehaviour
 
         Rigidbody previouslyPickedUpRigidbody = pickedUpRigidbody;
         DropObject();
-        previouslyPickedUpRigidbody.AddForce(transform.forward * stats.ThrowForce);
+        previouslyPickedUpRigidbody.AddForce(playerModel.forward * stats.ThrowForce);
     }
 
     void PickUpOrDropObject()

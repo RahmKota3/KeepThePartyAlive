@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] PlayerStats stats;
+    [SerializeField] Transform playerModel;
 
     Rigidbody rb;
     PlayerAnimations animator;
@@ -29,10 +30,10 @@ public class PlayerMovement : MonoBehaviour
             animator.ActivateAnimation(AnimationType.Walking);
     }
 
-    void RotatePlayer()
+    void RotateModel()
     {
         if(GetMovementVector() != Vector3.zero)
-            transform.forward = GetMovementVector();
+            playerModel.forward = GetMovementVector();
     }
 
     private void Awake()
@@ -43,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        RotatePlayer();
+        RotateModel();
     }
 
     private void FixedUpdate()
