@@ -5,7 +5,17 @@ using UnityEngine;
 
 public class ObjectTrigger : MonoBehaviour
 {
-    [SerializeField] PickupableObjectType acceptedType;
+    PickupableObjectType acceptedType;
+
+    public Action<Quest> OnObjectReceived;
+    Quest activeQuest;
+
+    public void QuestCreated(Action<Quest> actionOnItemReceived, Quest quest)
+    {
+        OnObjectReceived += actionOnItemReceived;
+        activeQuest = quest;
+        acceptedType = activeQuest.TypeToGet;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +23,7 @@ public class ObjectTrigger : MonoBehaviour
             other.GetComponent<PickupableObjects>().ObjectType == acceptedType)
         {
             Destroy(other.gameObject);
-            // TODO: Send info to QuestManager about collected object.
+            OnObjectReceived?.Invoke(activeQuest);
         }
     }
 }
