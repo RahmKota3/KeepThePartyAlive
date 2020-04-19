@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class ObjectTrigger : MonoBehaviour
 {
+    [SerializeField] PickupableObjectType acceptedType;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "PickupableObject" && other.isTrigger == false)
+        if (other.gameObject.tag == "PickupableObject" && other.isTrigger == false && 
+            other.GetComponent<PickupableObjects>().ObjectType == acceptedType)
         {
             Destroy(other.gameObject);
             // TODO: Send info to QuestManager about collected object.

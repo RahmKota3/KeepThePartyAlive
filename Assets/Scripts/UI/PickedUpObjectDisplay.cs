@@ -7,7 +7,7 @@ public class PickedUpObjectDisplay : MonoBehaviour
 {
     [SerializeField] PickupObjects playerPickUpObjects;
 
-    [Tooltip("0 = None, 1 = Beer, 2 = Soda, 3 = Chips, 4 = Trash, 5 = Trashbag")]
+    [Tooltip(GlobalVariables.PickupableObjectTypeTooltip)]
     [SerializeField] List<Sprite> pickupableObjectSprites;
 
     [SerializeField] Image pickedUpObjectDisplay;

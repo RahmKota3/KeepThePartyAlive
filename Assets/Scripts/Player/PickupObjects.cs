@@ -11,7 +11,7 @@ public class PickupObjects : MonoBehaviour
 
     Rigidbody pickedUpRigidbody = null;
     PickupableObjectType pickedUpObjectType = PickupableObjectType.None;
-    GameObject objectInRange = null;
+    List<GameObject> objectsInRange = new List<GameObject>();
 
     public Action<PickupableObjectType> OnPickUp;
     public Action<PickupableObjectType> OnDrop;
@@ -20,7 +20,7 @@ public class PickupObjects : MonoBehaviour
     {
         if(other.gameObject.tag == "PickupableObject")
         {
-            objectInRange = other.gameObject;
+            objectsInRange.Add(other.gameObject);
         }
     }
 
@@ -28,13 +28,13 @@ public class PickupObjects : MonoBehaviour
     {
         if (other.gameObject.tag == "PickupableObject")
         {
-            objectInRange = null;
+            objectsInRange.Remove(other.gameObject);
         }
     }
 
     bool CanPickUpObject()
     {
-        if (objectInRange == null || pickedUpRigidbody != null)
+        if (objectsInRange.Count == 0 || pickedUpRigidbody != null)
             return false;
         else
             return true;
@@ -50,12 +50,12 @@ public class PickupObjects : MonoBehaviour
 
     void PickUpObject()
     {
-        objectInRange.GetComponent<BoxCollider>().enabled = false;
-        pickedUpRigidbody = objectInRange.gameObject.GetComponent<Rigidbody>();
+        objectsInRange[objectsInRange.Count - 1].GetComponent<BoxCollider>().enabled = false;
+        pickedUpRigidbody = objectsInRange[objectsInRange.Count - 1].gameObject.GetComponent<Rigidbody>();
         pickedUpRigidbody.isKinematic = true;
-        objectInRange.transform.parent = pickedUpObjectParent;
-        objectInRange.transform.localPosition = Vector3.zero;
-        pickedUpObjectType = objectInRange.GetComponent<PickupableObjects>().ObjectType;
+        pickedUpRigidbody.gameObject.transform.parent = pickedUpObjectParent;
+        pickedUpRigidbody.gameObject.transform.localPosition = Vector3.zero;
+        pickedUpObjectType = pickedUpRigidbody.gameObject.GetComponent<PickupableObjects>().ObjectType;
 
         OnPickUp?.Invoke(pickedUpObjectType);
     }
