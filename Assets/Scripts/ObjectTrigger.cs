@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ObjectTrigger : MonoBehaviour
 {
-    PickupableObjectType acceptedType;
+    [SerializeField] PickupableObjectType acceptedType;
 
     public Action<Quest> OnObjectReceived;
     Quest activeQuest;

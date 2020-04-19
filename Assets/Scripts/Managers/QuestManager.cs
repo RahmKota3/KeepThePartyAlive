@@ -25,6 +25,7 @@ public class QuestManager : MonoBehaviour
         QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
             (int)QuestType.ChangeMusic, (int)QuestType.Basketball }, new List<int> { 50, 30, 20 });
 
+        // Debug2
         return new Quest(typeOfQuest, timeBeforeQuestFail, 
             (PickupableObjectType.Beer));
 

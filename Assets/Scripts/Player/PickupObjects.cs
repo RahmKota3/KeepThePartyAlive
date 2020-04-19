@@ -52,7 +52,12 @@ public class PickupObjects : MonoBehaviour
 
     void PickUpObject()
     {
-        objectsInRange[objectsInRange.Count - 1].GetComponent<BoxCollider>().enabled = false;
+        Collider col = objectsInRange[objectsInRange.Count - 1].GetComponent<BoxCollider>();
+
+        if (col == null)
+            col = objectsInRange[objectsInRange.Count - 1].GetComponents<SphereCollider>()[1];
+
+        col.enabled = false;
         pickedUpRigidbody = objectsInRange[objectsInRange.Count - 1].gameObject.GetComponent<Rigidbody>();
         pickedUpRigidbody.isKinematic = true;
         pickedUpRigidbody.gameObject.transform.parent = pickedUpObjectParent;
@@ -66,7 +71,13 @@ public class PickupObjects : MonoBehaviour
 
     void DropObject()
     {
-        pickedUpRigidbody.gameObject.GetComponent<BoxCollider>().enabled = true;
+        Collider col = pickedUpRigidbody.gameObject.GetComponent<BoxCollider>();
+
+        if (col == null)
+            col = pickedUpRigidbody.gameObject.GetComponents<SphereCollider>()[1];
+
+        col.enabled = true;
+
         pickedUpRigidbody.isKinematic = false;
         pickedUpRigidbody.gameObject.transform.parent = null;
         pickedUpRigidbody.AddForce(playerModel.forward * stats.DropForce);

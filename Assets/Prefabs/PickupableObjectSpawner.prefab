@@ -14,7 +14,7 @@ GameObject:
   m_Layer: 0
   m_Name: PickupableObjectSpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -67,6 +67,7 @@ MonoBehaviour:
   - {fileID: 3998152448733750452, guid: 1e73dda1b26c09d458b8e66bb55ddd65, type: 3}
   - {fileID: 3702792425082315233, guid: aa2adaa9977bd16408c1891d44d52bfc, type: 3}
   - {fileID: 7465407401976774696, guid: 6ecf6681a5b3dc144acceefbd4a3ef8b, type: 3}
+  - {fileID: 5126596888793040184, guid: 31970b6b9a4f8314297a762edc9acbd9, type: 3}
 --- !u!1 &1831269176504704575
 GameObject:
   m_ObjectHideFlags: 0
