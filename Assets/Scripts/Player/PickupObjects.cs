@@ -61,9 +61,9 @@ public class PickupObjects : MonoBehaviour
 
     void DropObject()
     {
-        objectInRange.GetComponent<BoxCollider>().enabled = true;
+        pickedUpRigidbody.gameObject.GetComponent<BoxCollider>().enabled = true;
         pickedUpRigidbody.isKinematic = false;
-        objectInRange.transform.parent = null;
+        pickedUpRigidbody.gameObject.transform.parent = null;
         pickedUpRigidbody.AddForce(transform.forward * stats.DropForce);
         pickedUpRigidbody = null;
         pickedUpObjectType = PickupableObjectType.None;
