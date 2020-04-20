@@ -51,7 +51,7 @@ public class QuestManager : MonoBehaviour
         }
 
         QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 30, 20 });
+            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 25, 5 });
 
         // Debug
         //QuestType typeOfQuest = QuestType.Puking;
@@ -174,6 +174,11 @@ public class QuestManager : MonoBehaviour
 
         activeQuests.Remove(questToFail);
         // TODO: Remove score.
+
+        if(questToFail.Npc != null && questToFail.TypeOfQuest == QuestType.Puking)
+        {
+            questToFail.Npc.GetComponent<NPCAnimations>().ChangeAnimation(AnimationType.Dancing);
+        }
 
         if (questToFail.Npc != null)
         {
