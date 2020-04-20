@@ -182,7 +182,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 64802389}
   m_TextComponent: {fileID: 1367877660}
   m_materialReferenceIndex: 1
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 189999605}
   m_TextComponent: {fileID: 866229563}
   m_materialReferenceIndex: 1
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 213668599}
   m_TextComponent: {fileID: 1570032683}
   m_materialReferenceIndex: 1
@@ -399,7 +399,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e0769a1e5ae74094e8f0e6566fe43a1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 29627ee01a4c3cb42b36fb0f903d70ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 582396455}
   m_TextComponent: {fileID: 1272111750}
   m_materialReferenceIndex: 1
@@ -856,7 +856,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Game Over!
+  m_text: Party Complete!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5573a557659fc84eb3574ddcbfa129e, type: 2}
   m_sharedMaterial: {fileID: -4875839163256645167, guid: a5573a557659fc84eb3574ddcbfa129e,
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_margin: {x: -130.83789, y: -5.1937256, z: -130.82617, w: -24.239014}
   m_textInfo:
     textComponent: {fileID: 866229563}
-    characterCount: 10
+    characterCount: 15
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 930932525}
   m_TextComponent: {fileID: 916421844}
   m_materialReferenceIndex: 1
