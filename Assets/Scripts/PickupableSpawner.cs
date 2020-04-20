@@ -10,7 +10,14 @@ public class PickupableSpawner : MonoBehaviour
     [Tooltip(GlobalVariables.PickupableObjectTypeTooltip)]
     [SerializeField] List<GameObject> pickupablePrefab;
 
+    [SerializeField] Transform objSprite;
+
+    [Tooltip(GlobalVariables.PickupableObjectTypeTooltip)]
+    [SerializeField] List<Sprite> pickupableObjectSprites;
+
     GameObject lastSpawned = null;
+
+    Camera cam;
 
     private void OnTriggerExit(Collider other)
     {
@@ -28,8 +35,22 @@ public class PickupableSpawner : MonoBehaviour
         lastSpawned = obj.gameObject;
     }
 
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
+
     private void Start()
     {
+        // TODO: 
         SpawnPickupableObject();
+
+        //objSprite.GetComponent<SpriteRenderer>().sprite = pickupableObjectSprites[(int)typeToSpawn];
+    }
+
+    private void Update()
+    {
+        objSprite.LookAt(cam.transform);
+        //objSprite.eulerAngles = new Vector3(objSprite.eulerAngles.x, 0, objSprite.eulerAngles.z);
     }
 }
