@@ -51,6 +51,5 @@ public class PickupableSpawner : MonoBehaviour
     private void Update()
     {
         objSprite.LookAt(cam.transform);
-        //objSprite.eulerAngles = new Vector3(objSprite.eulerAngles.x, 0, objSprite.eulerAngles.z);
     }
 }

@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class PointTowardsQuest : MonoBehaviour
 {
+    [SerializeField] Image taskImage;
+
     public Transform questWorldTransform;
     Vector3 questWorldPosition { get { return questWorldTransform.position + new Vector3(0, 2.5f, 0); } }
 
     Camera cam;
 
     Transform playerTransform;
+
+    [Tooltip(GlobalVariables.QuestTypeTooltip)]
+    [SerializeField] List<Sprite> taskSprites = new List<Sprite>(5);
 
     void FollowQuestPosition()
     {
