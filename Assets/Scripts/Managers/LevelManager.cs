@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum SceneType { Gameplay, MainMenu, FinalScore }
+public enum SceneType { Gameplay, MainMenu, WinScreen, LoseScreen }
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,7 +12,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] string gameplaySceneName = "Gameplay";
     [SerializeField] string mainMenuSceneName = "MainMenu";
-    [SerializeField] string finalScoreSceneName = "";
+    [SerializeField] string winSceneName = "WinScreen";
+    [SerializeField] string lossSceneName = "LossScreen";
 
     public Action OnBeforeSceneLoad;
     public Action<SceneType> OnBeforeSceneTypeLoaded;
@@ -46,8 +47,11 @@ public class LevelManager : MonoBehaviour
             case SceneType.MainMenu:
                 return mainMenuSceneName;
 
-            case SceneType.FinalScore:
-                return finalScoreSceneName;
+            case SceneType.WinScreen:
+                return winSceneName;
+
+            case SceneType.LoseScreen:
+                return lossSceneName;
 
             default:
                 Debug.LogError("Scene not implemented: " + type);

@@ -246,9 +246,16 @@ public class QuestManager : MonoBehaviour
         timeBetweenQuests = Mathf.Clamp(timeBetweenQuests - timeBeforeQuestFailReduction, minTimeBetweenQuests, timeBetweenQuests);
     }
 
+    void StopCoroutines()
+    {
+        TimeManager.Instance.StopAllCoroutines();
+        LevelManager.Instance.OnBeforeSceneLoad -= StopAllCoroutines;
+    }
+
     private void Awake()
     {
         Instance = this;
+        LevelManager.Instance.OnBeforeSceneLoad += StopAllCoroutines;
     }
 
     private void Start()
