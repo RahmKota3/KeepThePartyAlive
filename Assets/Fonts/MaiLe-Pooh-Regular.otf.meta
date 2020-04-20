@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: da36e12b22dc1f149bd5db6572509834
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pooh
+  fontNames:
+  - Pooh
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: a32e50719f967aa49ac68a358ed81303, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

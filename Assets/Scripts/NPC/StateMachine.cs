@@ -6,13 +6,13 @@ public enum NpcState { Happy, Waiting, Angry, Sick }
 
 public class StateMachine : MonoBehaviour
 {
-    NpcState currentState = NpcState.Happy;
+    public NpcState CurrentState = NpcState.Happy;
 
     public System.Action<NpcState> OnStateChanged;
 
     public void ChangeState(NpcState state)
     {
-        currentState = state;
+        CurrentState = state;
         OnStateChanged?.Invoke(state);
     }
 }

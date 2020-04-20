@@ -33,10 +33,10 @@ public class QuestManager : MonoBehaviour
     {
         Transform randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
 
-        QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 30, 20 });
+        //QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
+        //    (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 30, 20 });
 
-        //QuestType typeOfQuest = QuestType.Puking;
+        QuestType typeOfQuest = QuestType.Puking;
 
         QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
         if (npcActiveQuest.ActiveQuest != null) 
@@ -156,10 +156,6 @@ public class QuestManager : MonoBehaviour
 
         if (questToFail.Npc != null)
         {
-            if(playerPickupObjs.pickedUpRigidbody != null && playerPickupObjs.pickedUpRigidbody.gameObject.transform == questToFail.Npc)
-            {
-                playerPickupObjs.DropObject();
-            }
             ChangeNpcsState(questToFail);
             questToFail.Npc.GetComponent<QuestState>().ActiveQuest.TypeOfQuest = QuestType.None;
         }
@@ -194,10 +190,20 @@ public class QuestManager : MonoBehaviour
         {
             quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Happy);
 
+            if (playerPickupObjs.pickedUpRigidbody != null && playerPickupObjs.pickedUpRigidbody.gameObject.transform == quest.Npc)
+            {
+                playerPickupObjs.DropObject();
+            }
+
             foreach (GameObject g in NPCManager.Instance.NPCs)
             {
                 if(Vector3.Distance(quest.Npc.position, g.transform.position) <= pukeRange && g.transform != quest.Npc)
                 {
+                    if (playerPickupObjs.pickedUpRigidbody != null && playerPickupObjs.pickedUpRigidbody.gameObject == g)
+                    {
+                        playerPickupObjs.DropObject();
+                    }
+
                     g.GetComponent<StateMachine>().ChangeState(NpcState.Angry);
                 }
             }

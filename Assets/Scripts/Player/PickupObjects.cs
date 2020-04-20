@@ -45,7 +45,14 @@ public class PickupObjects : MonoBehaviour
         if (objectsInRange.Count == 0 || pickedUpRigidbody != null)
             return false;
         else
-            return true;
+        {
+            StateMachine stateMachine = objectsInRange[objectsInRange.Count - 1].GetComponent<StateMachine>();
+
+            if (stateMachine != null && stateMachine.CurrentState == NpcState.Angry)
+                return false;
+        }
+        
+        return true;
     }
 
     bool CanThrowObject()
