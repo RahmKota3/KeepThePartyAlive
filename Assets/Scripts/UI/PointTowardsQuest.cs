@@ -9,39 +9,57 @@ public class PointTowardsQuest : MonoBehaviour
 
     Camera cam;
 
-    RectTransform rectTransform;
+    Transform playerTransform;
 
     private void Awake()
     {
         cam = Camera.main;
-        rectTransform = GetComponent<RectTransform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
     {
-        Vector3 worldPos = cam.ScreenToWorldPoint(transform.position);
+        Vector3 worldPosition = cam.ScreenToWorldPoint(transform.position);
         Vector3 questScreenPosition = cam.WorldToScreenPoint(questWorldPosition);
+
         bool isOffScreen = questScreenPosition.x <= 0 || questScreenPosition.x >= Screen.width || questScreenPosition.y <= 0 ||
             questScreenPosition.y >= Screen.height;
-        Debug.Log(isOffScreen);
+
+        Vector3 offset = new Vector3(-50, 150, 0);
 
         if (isOffScreen)
         {
-            Vector3 cappedScreenPos = questScreenPosition;
-            if (cappedScreenPos.x <= 0)
-                cappedScreenPos.x = 0;
-            if (cappedScreenPos.x >= Screen.width)
-                cappedScreenPos.x = Screen.width;
-            if (cappedScreenPos.y <= 0)
-                cappedScreenPos.y = 0;
-            if (cappedScreenPos.y >= Screen.height)
-                cappedScreenPos.y = Screen.height;
+            if(Vector3.Distance(playerTransform.position, questWorldPosition) >= 13f)
+            {
+                Vector3 tempQuestWorldPos = playerTransform.position + (questWorldPosition - playerTransform.position).normalized * 13f;
+                questScreenPosition = cam.WorldToScreenPoint(tempQuestWorldPos);
+            }
 
-            transform.position = cappedScreenPos;
+            Debug.Log(Vector3.Distance(playerTransform.position, questWorldPosition));
+
+            float xMultiplier = 1;
+            float yMultiplier = 1;
+
+            if (questScreenPosition.x <= 0)
+            {
+                questScreenPosition.x = 0;
+                xMultiplier = -1;
+            }
+            if (questScreenPosition.x >= Screen.width)
+                questScreenPosition.x = Screen.width;
+
+            if (questScreenPosition.y <= 0)
+            {
+                questScreenPosition.y = 0;
+                yMultiplier = -1;
+            }
+            if (questScreenPosition.y >= Screen.height)
+                questScreenPosition.y = Screen.height;
+
+            offset = new Vector3(-100 * xMultiplier, -100 * yMultiplier, 0);
         }
-        else
-        {
-            transform.position = questScreenPosition;
-        }
+
+        questScreenPosition.z = 0;
+        transform.position = questScreenPosition + offset;
     }
 }
