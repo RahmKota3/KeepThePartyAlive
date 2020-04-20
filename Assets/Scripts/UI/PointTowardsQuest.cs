@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PointTowardsQuest : MonoBehaviour
 {
-    public Vector3 questWorldPosition = new Vector3(-100, 0, -24);
+    public Vector3 questWorldPosition = new Vector3(-100, 3, -24);
 
     Camera cam;
 
@@ -22,10 +22,11 @@ public class PointTowardsQuest : MonoBehaviour
         Vector3 worldPosition = cam.ScreenToWorldPoint(transform.position);
         Vector3 questScreenPosition = cam.WorldToScreenPoint(questWorldPosition);
 
-        bool isOffScreen = questScreenPosition.x <= 0 || questScreenPosition.x >= Screen.width || questScreenPosition.y <= 0 ||
-            questScreenPosition.y >= Screen.height;
+        //Vector3 offset = new Vector3(0, 150, 0);
+        Vector3 offset = Vector3.zero;
 
-        Vector3 offset = new Vector3(-50, 150, 0);
+        bool isOffScreen = questScreenPosition.x + offset.x <= 0 || questScreenPosition.x + offset.x >= Screen.width || 
+            questScreenPosition.y + offset.y <= 0 || questScreenPosition.y + offset.y >= Screen.height;
 
         if (isOffScreen)
         {

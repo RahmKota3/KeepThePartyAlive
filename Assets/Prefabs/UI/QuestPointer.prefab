@@ -88,4 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b03af8bd020f14c9a89b7a09e49c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questWorldPosition: {x: -94, y: 0, z: -21}
+  questWorldPosition: {x: -94, y: 2.5, z: -21}
