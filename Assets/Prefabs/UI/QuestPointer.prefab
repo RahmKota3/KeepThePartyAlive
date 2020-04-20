@@ -88,4 +88,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b03af8bd020f14c9a89b7a09e49c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questWorldPosition: {x: -94, y: 2.5, z: -21}
+  taskImage: {fileID: 0}
+  questWorldTransform: {fileID: 0}
+  taskSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 83f99be22dd8d0c4790b6632611cab29, type: 3}
+  - {fileID: 21300000, guid: 459cb56e54f869c4aaf4c2a0ea0b33a2, type: 3}
+  - {fileID: 21300000, guid: 99cbd81960d1eab45b1ccb5bf8ac1a38, type: 3}
+  - {fileID: 21300000, guid: f8250ed4f7b0a7842857473ca62470ca, type: 3}
