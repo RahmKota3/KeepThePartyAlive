@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
 
     NavMeshAgent agent;
     NavMeshObstacle obstacle;
+    NPCAnimations animator;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,12 +29,14 @@ public class Movement : MonoBehaviour
         obstacle.enabled = false;
         agent.enabled = true;
         agent.SetDestination(houseEnterance.position);
+        animator.ChangeAnimation(AnimationType.Walking);
     }
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
+        animator = GetComponent<NPCAnimations>();
 
         GetComponent<StateMachine>().OnStateChanged += FleeTheParty;
     }

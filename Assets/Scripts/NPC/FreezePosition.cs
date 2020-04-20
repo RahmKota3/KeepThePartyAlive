@@ -15,15 +15,14 @@ public class FreezePosition : MonoBehaviour
     {
         StopAllCoroutines();
 
-        rb.constraints = RigidbodyConstraints.None;
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rb.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezeRotation;
     }
 
     IEnumerator FreezePosCoroutine()
     {
         yield return new WaitForSeconds(1f);
 
-        rb.constraints = RigidbodyConstraints.FreezeAll;
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 
     private void Awake()

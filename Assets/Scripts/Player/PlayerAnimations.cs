@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum AnimationType { Idle, Walking, PickingUp, Dancing, Drinking, Waiting, Nervous }
+public enum AnimationType { Idle, Walking, PickingUp, Dancing, Drinking, Waiting, Nervous, Puking }
 
 public class PlayerAnimations : MonoBehaviour
 {

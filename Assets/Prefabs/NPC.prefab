@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 1644966592719103737}
   - component: {fileID: 1536411193222409735}
   - component: {fileID: 8984812393370734612}
+  - component: {fileID: 7911334062800740972}
   m_Layer: 0
   m_Name: NPC
   m_TagString: PickupableObject
@@ -139,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907f6374f32e0e346a94cc670bb78c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentState: 0
 --- !u!114 &-1513191919003981067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +206,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 122
   m_CollisionDetection: 2
 --- !u!114 &5344770341685135684
 MonoBehaviour:
@@ -230,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907f6374f32e0e346a94cc670bb78c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentState: 0
 --- !u!114 &1536411193222409735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +257,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 866725ace0a26854e9a78078e9559896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7911334062800740972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5366726328263121783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d2f9a8ea6dd3e4583c41c6b97a57ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5366726328589812342

@@ -33,16 +33,33 @@ public class QuestManager : MonoBehaviour
     {
         Transform randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
 
-        //QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-        //    (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 30, 20 });
+        StateMachine stateMachine = randomNpc.gameObject.GetComponent<StateMachine>();
 
-        QuestType typeOfQuest = QuestType.Puking;
+        int i = 0;
+
+        while (stateMachine.CurrentState == NpcState.Angry)
+        {
+            randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
+            stateMachine = randomNpc.gameObject.GetComponent<StateMachine>();
+            i++;
+
+            if(i == 100)
+            {
+                Debug.LogError("Everyone is propably leaving");
+                return null;
+            }
+        }
+
+        QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
+            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 30, 20 });
+
+        // Debug
+        //QuestType typeOfQuest = QuestType.Puking;
 
         QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
+
         if (npcActiveQuest.ActiveQuest != null) 
         {
-            int i = 0;
-
             while (npcActiveQuest.ActiveQuest.TypeOfQuest == QuestType.Puking)
             {
                 randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
@@ -93,10 +110,12 @@ public class QuestManager : MonoBehaviour
         if(quest.TypeOfQuest != QuestType.Puking)
         {
             quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Waiting);
+            quest.Npc.GetComponent<NPCAnimations>().ChangeAnimation(AnimationType.Waiting);
         }
         else
         {
             quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Sick);
+            quest.Npc.GetComponent<NPCAnimations>().ChangeAnimation(AnimationType.Puking);
         }
 
         quest.Npc.GetComponent<QuestState>().ActiveQuest = quest;
@@ -123,7 +142,7 @@ public class QuestManager : MonoBehaviour
         }
 
         objToDestroyLater = Instantiate(questMarkerPrefab, ui.transform);
-        objToDestroyLater.GetComponent<PointTowardsQuest>().questWorldPosition = quest.Npc.position + new Vector3(0, 2.5f, 0);
+        objToDestroyLater.GetComponent<PointTowardsQuest>().questWorldTransform = quest.Npc;
         objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
     }
 
@@ -141,6 +160,8 @@ public class QuestManager : MonoBehaviour
 
         activeQuests.Remove(finishedQuest);
         // TODO: Add score.
+
+        finishedQuest.Npc.GetComponent<NPCAnimations>().ChangeAnimation(AnimationType.Dancing);
     }
 
     void FailQuest(Quest questToFail)
