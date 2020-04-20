@@ -255,7 +255,7 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        LevelManager.Instance.OnBeforeSceneLoad += StopAllCoroutines;
+        //LevelManager.Instance.OnBeforeSceneLoad += StopAllCoroutines;
     }
 
     private void Start()

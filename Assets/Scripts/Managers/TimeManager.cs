@@ -6,6 +6,10 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
 
+    [SerializeField] int gameplayTimeMinutes = 5;
+
+    public float GameTime = 0;
+
     public void StartTimer(float time, System.Action functionToCall)
     {
         StartCoroutine(StartTimerCoroutine(time, functionToCall));
@@ -30,8 +34,39 @@ public class TimeManager : MonoBehaviour
         functionToCall?.Invoke(questToFail);
     }
 
+    public void ResetCoroutines()
+    {
+        StopAllCoroutines();
+    }
+
+    void EndGame()
+    {
+        StopAllCoroutines();
+        LevelManager.Instance.LoadScene(SceneType.WinScreen);
+    }
+    
     private void Awake()
     {
         Instance = this;
+
+        //StartTimer(5, EndGame);
+        //StartTimer(gameplayTimeMinutes * 60, EndGame);
+    }
+
+    private void Update()
+    {
+        if (LevelManager.Instance.CurrentScene != SceneType.Gameplay)
+        {
+            GameTime = 0;
+            return;
+        }
+
+        GameTime += Time.deltaTime;
+
+        if (GameTime >= 5)
+            EndGame();
+
+        if (GameTime >= gameplayTimeMinutes * 60)
+            EndGame();
     }
 }

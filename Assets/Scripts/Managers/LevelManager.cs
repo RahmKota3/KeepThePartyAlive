@@ -19,6 +19,13 @@ public class LevelManager : MonoBehaviour
     public Action<SceneType> OnBeforeSceneTypeLoaded;
     public Action OnAfterSceneLoad;
 
+    public SceneType CurrentScene = SceneType.MainMenu;
+
+    public void LoadWinLevel()
+    {
+        LoadScene(SceneType.WinScreen);
+    }
+
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -26,6 +33,12 @@ public class LevelManager : MonoBehaviour
 
     public void LoadScene(SceneType typeToLoad)
     {
+        if (TimeManager.Instance != null && TimeManager.Instance.gameObject != null)
+            TimeManager.Instance.ResetCoroutines();
+
+        CurrentScene = typeToLoad;
+        Debug.Log(CurrentScene);
+
         OnBeforeSceneLoad?.Invoke();
         OnBeforeSceneTypeLoaded?.Invoke(typeToLoad);
 

@@ -14,7 +14,8 @@ public class NPCManager : MonoBehaviour
 
         if(NPCs.Count == 0)
         {
-            LevelManager.Instance.LoadScene(SceneType.LoseScreen);
+            if(LevelManager.Instance.CurrentScene == SceneType.Gameplay)
+                LevelManager.Instance.LoadScene(SceneType.LoseScreen);
         }
     }
 
