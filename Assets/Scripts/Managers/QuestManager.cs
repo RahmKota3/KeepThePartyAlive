@@ -14,20 +14,47 @@ public class QuestManager : MonoBehaviour
     [SerializeField] float minTimeBetweenQuests = 10;
     [SerializeField] float minTimeBeforeQuestFails = 10;
 
+    [SerializeField] float pukeRange = 3f;
+
     [Header("References")]
     [SerializeField] GameObject itemReceiverPrefab;
     [SerializeField] GameObject questMarkerPrefab;
     [SerializeField] GameObject trashPrefab;
     [SerializeField] ObjectTrigger trashcan;
     [SerializeField] GameObject ui;
+    [SerializeField] GameObject pukePrefab;
+
+    PickupObjects playerPickupObjs;
 
     List<Quest> activeQuests = new List<Quest>();
     Dictionary<Quest, List<GameObject>> objectsToDestroyOnQuestFinish = new Dictionary<Quest, List<GameObject>>();
 
     Quest GetRandomizedQuest()
     {
+        Transform randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
+
         QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut }, new List<int> { 60, 10, 30 });
+            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 30, 20 });
+
+        //QuestType typeOfQuest = QuestType.Puking;
+
+        QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
+        if (npcActiveQuest.ActiveQuest != null) 
+        {
+            int i = 0;
+
+            while (npcActiveQuest.ActiveQuest.TypeOfQuest == QuestType.Puking)
+            {
+                randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
+                i++;
+
+                if (i == 100)
+                {
+                    typeOfQuest = QuestType.GetSomething;
+                    break;
+                }
+            }
+        }
 
         PickupableObjectType objType = PickupableObjectType.None;
 
@@ -41,7 +68,7 @@ public class QuestManager : MonoBehaviour
             objType = PickupableObjectType.Trash;
         }
 
-        return new Quest(typeOfQuest, timeBeforeQuestFail, objType);
+        return new Quest(typeOfQuest, timeBeforeQuestFail, objType, randomNpc);
     }
 
     void CreateNewQuest()
@@ -63,37 +90,50 @@ public class QuestManager : MonoBehaviour
             trashcan.QuestCreated(FinishQuest, quest);
         }
 
+        if(quest.TypeOfQuest != QuestType.Puking)
+        {
+            quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Waiting);
+        }
+        else
+        {
+            quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Sick);
+        }
+
+        quest.Npc.GetComponent<QuestState>().ActiveQuest = quest;
+
         Debug.Log("New quest: " + quest.TypeOfQuest);
     }
 
     void CreateObjectsNeededForQuest(Quest quest)
     {
-        Transform randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
         GameObject objToDestroyLater;
 
         objectsToDestroyOnQuestFinish[quest] = new List<GameObject>();
 
         if(quest.TypeOfQuest == QuestType.GetSomething)
         {
-            objToDestroyLater = Instantiate(itemReceiverPrefab, randomNpc.position, Quaternion.identity, randomNpc);
+            objToDestroyLater = Instantiate(itemReceiverPrefab, quest.Npc.position, Quaternion.identity, quest.Npc);
             objToDestroyLater.GetComponent<ObjectTrigger>().QuestCreated(FinishQuest, quest);
             objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
         }
         else if(quest.TypeOfQuest == QuestType.ThrowTheTrashOut)
         {
-            objToDestroyLater = Instantiate(trashPrefab, randomNpc.Find("TrashSpawnPosition").position, Quaternion.identity);
+            objToDestroyLater = Instantiate(trashPrefab, quest.Npc.Find("TrashSpawnPosition").position, Quaternion.identity);
             objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
         }
 
-        // Create quest marker
         objToDestroyLater = Instantiate(questMarkerPrefab, ui.transform);
-        objToDestroyLater.GetComponent<PointTowardsQuest>().questWorldPosition = randomNpc.position + new Vector3(0, 2.5f, 0);
+        objToDestroyLater.GetComponent<PointTowardsQuest>().questWorldPosition = quest.Npc.position + new Vector3(0, 2.5f, 0);
         objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
     }
 
     void FinishQuest(Quest finishedQuest)
     {
         Debug.Log("Finished quest: " + finishedQuest.TypeOfQuest);
+
+        finishedQuest.Npc.GetComponent<QuestState>().ActiveQuest.TypeOfQuest = QuestType.None;
+
+        finishedQuest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Happy);
 
         TimeManager.Instance.StopCoroutine(finishedQuest.FailCoroutine);
 
@@ -107,10 +147,30 @@ public class QuestManager : MonoBehaviour
     {
         Debug.Log("Failed quest: " + questToFail.TypeOfQuest);
 
+        CreateQuestFailObjects(questToFail);
+
         DestroyQuestObjects(questToFail);
 
         activeQuests.Remove(questToFail);
         // TODO: Remove score.
+
+        if (questToFail.Npc != null)
+        {
+            if(playerPickupObjs.pickedUpRigidbody != null && playerPickupObjs.pickedUpRigidbody.gameObject.transform == questToFail.Npc)
+            {
+                playerPickupObjs.DropObject();
+            }
+            ChangeNpcsState(questToFail);
+            questToFail.Npc.GetComponent<QuestState>().ActiveQuest.TypeOfQuest = QuestType.None;
+        }
+    }
+
+    void CreateQuestFailObjects(Quest quest)
+    {
+        if(quest.TypeOfQuest == QuestType.Puking)
+        {
+            Instantiate(pukePrefab, quest.Npc.Find("TrashSpawnPosition").position, Quaternion.Euler(0, Random.Range(0f, 359f), 0));
+        }
     }
 
     void DestroyQuestObjects(Quest quest)
@@ -120,6 +180,26 @@ public class QuestManager : MonoBehaviour
             foreach (GameObject g in objectsToDestroyOnQuestFinish[quest])
             {
                 Destroy(g);
+            }
+        }
+    }
+
+    void ChangeNpcsState(Quest quest)
+    {
+        if(quest.TypeOfQuest != QuestType.Puking)
+        {
+            quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Angry);
+        }
+        else
+        {
+            quest.Npc.GetComponent<StateMachine>().ChangeState(NpcState.Happy);
+
+            foreach (GameObject g in NPCManager.Instance.NPCs)
+            {
+                if(Vector3.Distance(quest.Npc.position, g.transform.position) <= pukeRange && g.transform != quest.Npc)
+                {
+                    g.GetComponent<StateMachine>().ChangeState(NpcState.Angry);
+                }
             }
         }
     }
@@ -137,6 +217,8 @@ public class QuestManager : MonoBehaviour
 
     private void Start()
     {
+        playerPickupObjs = FindObjectOfType<PickupObjects>();
+
         //TimeManager.Instance.StartTimer(2, CreateNewQuest);
         TimeManager.Instance.StartTimer(0, CreateNewQuest);
     }

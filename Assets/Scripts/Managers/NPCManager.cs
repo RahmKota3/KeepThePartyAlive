@@ -8,6 +8,11 @@ public class NPCManager : MonoBehaviour
 
     public List<GameObject> NPCs;
 
+    public void RemoveNpcFromList(GameObject npc)
+    {
+        NPCs.Remove(npc);
+    }
+
     public void AddNpcToList(GameObject npc)
     {
         NPCs.Add(npc);

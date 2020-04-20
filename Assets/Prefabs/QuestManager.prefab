@@ -50,13 +50,17 @@ MonoBehaviour:
   timeBeforeQuestFailReduction: 0
   minTimeBetweenQuests: 10
   minTimeBeforeQuestFails: 10
+  pukeRange: 10
   itemReceiverPrefab: {fileID: 8929776588182783939, guid: 05b7ba7effa099b448e6c038f3d3a5bc,
     type: 3}
   questMarkerPrefab: {fileID: 8265278304197622159, guid: b8a24439709979647b82c00d0f679884,
     type: 3}
   trashPrefab: {fileID: 3702792425082315233, guid: aa2adaa9977bd16408c1891d44d52bfc,
     type: 3}
+  trashcan: {fileID: 0}
   ui: {fileID: 0}
+  pukePrefab: {fileID: 4443750510526196318, guid: a3f6e262feb3c9b40bd0f8761f4916ab,
+    type: 3}
 --- !u!114 &-3132110990681350747
 MonoBehaviour:
   m_ObjectHideFlags: 0

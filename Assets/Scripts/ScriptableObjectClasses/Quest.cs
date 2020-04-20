@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum QuestType { None, GetSomething, ThrowTheTrashOut, ChangeMusic }
+public enum QuestType { None, GetSomething, ThrowTheTrashOut, ChangeMusic, Puking }
 
 public class Quest
 {
@@ -11,12 +11,15 @@ public class Quest
 
     public float TimeLimit = 15f;
 
+    public Transform Npc;
+
     public Coroutine FailCoroutine;
 
-    public Quest(QuestType type, float timeLimit, PickupableObjectType typeToGet = PickupableObjectType.None)
+    public Quest(QuestType type, float timeLimit, PickupableObjectType typeToGet, Transform npc)
     {
         TypeOfQuest = type;
         TimeLimit = timeLimit;
         TypeToGet = typeToGet;
+        Npc = npc;
     }
 }

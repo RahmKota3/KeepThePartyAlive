@@ -9,7 +9,7 @@ public class PickupObjects : MonoBehaviour
     [SerializeField] PlayerStats stats;
     [SerializeField] Transform playerModel;
 
-    Rigidbody pickedUpRigidbody = null;
+    public Rigidbody pickedUpRigidbody = null;
     PickupableObjectType pickedUpObjectType = PickupableObjectType.None;
     List<GameObject> objectsInRange = new List<GameObject>();
 
@@ -84,7 +84,7 @@ public class PickupObjects : MonoBehaviour
             freezePos.UnFreezePos();
     }
 
-    void DropObject()
+    public void DropObject()
     {
         Collider col = pickedUpRigidbody.gameObject.GetComponent<BoxCollider>();
 
