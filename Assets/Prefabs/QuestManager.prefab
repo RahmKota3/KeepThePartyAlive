@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8798533202521958640}
   - component: {fileID: 8798533202521958641}
+  - component: {fileID: -3132110990681350747}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -51,3 +52,21 @@ MonoBehaviour:
   minTimeBeforeQuestFails: 10
   itemReceiverPrefab: {fileID: 8929776588182783939, guid: 05b7ba7effa099b448e6c038f3d3a5bc,
     type: 3}
+  questMarkerPrefab: {fileID: 8265278304197622159, guid: b8a24439709979647b82c00d0f679884,
+    type: 3}
+  trashPrefab: {fileID: 3702792425082315233, guid: aa2adaa9977bd16408c1891d44d52bfc,
+    type: 3}
+  ui: {fileID: 0}
+--- !u!114 &-3132110990681350747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798533202521958647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af88ab84273a41543a851c29cf37409e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCs: []

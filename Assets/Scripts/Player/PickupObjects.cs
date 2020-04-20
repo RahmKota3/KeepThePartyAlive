@@ -18,6 +18,12 @@ public class PickupObjects : MonoBehaviour
     public Action<PickupableObjectType> OnPickUp;
     public Action<PickupableObjectType> OnDrop;
 
+    public void ObjDestroyed(GameObject obj)
+    {
+        if (objectsInRange.Contains(obj))
+            objectsInRange.Remove(obj);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "PickupableObject")
@@ -52,10 +58,14 @@ public class PickupObjects : MonoBehaviour
 
     void PickUpObject()
     {
-        Collider col = objectsInRange[objectsInRange.Count - 1].GetComponent<BoxCollider>();
+        Collider col = null;
 
-        if (col == null)
+        if (objectsInRange[objectsInRange.Count - 1].GetComponent<BoxCollider>() != null)
+            col = objectsInRange[objectsInRange.Count - 1].GetComponent<BoxCollider>();
+        else if (objectsInRange[objectsInRange.Count - 1].GetComponents<SphereCollider>()[1] != null)
             col = objectsInRange[objectsInRange.Count - 1].GetComponents<SphereCollider>()[1];
+        else
+            return;
 
         col.enabled = false;
         pickedUpRigidbody = objectsInRange[objectsInRange.Count - 1].gameObject.GetComponent<Rigidbody>();

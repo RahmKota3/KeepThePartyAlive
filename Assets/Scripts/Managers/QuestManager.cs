@@ -16,25 +16,32 @@ public class QuestManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] GameObject itemReceiverPrefab;
+    [SerializeField] GameObject questMarkerPrefab;
+    [SerializeField] GameObject trashPrefab;
+    [SerializeField] ObjectTrigger trashcan;
+    [SerializeField] GameObject ui;
 
     List<Quest> activeQuests = new List<Quest>();
-    Dictionary<Quest, GameObject> objectsToDestroyOnQuestFinish = new Dictionary<Quest, GameObject>();
+    Dictionary<Quest, List<GameObject>> objectsToDestroyOnQuestFinish = new Dictionary<Quest, List<GameObject>>();
 
     Quest GetRandomizedQuest()
     {
         QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-            (int)QuestType.ChangeMusic, (int)QuestType.Basketball }, new List<int> { 50, 30, 20 });
+            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut }, new List<int> { 60, 10, 30 });
 
-        // Debug2
-        return new Quest(typeOfQuest, timeBeforeQuestFail, 
-            (PickupableObjectType.Beer));
+        PickupableObjectType objType = PickupableObjectType.None;
 
-        return new Quest(typeOfQuest, timeBeforeQuestFail,
-            (PickupableObjectType)Random.Range(1, System.Enum.GetValues(typeof(PickupableObjectType)).Length));
+        if(typeOfQuest == QuestType.GetSomething)
+        {
+            // Debug
+            objType = PickupableObjectType.Beer;
+        }
+        else if(typeOfQuest == QuestType.ThrowTheTrashOut)
+        {
+            objType = PickupableObjectType.Trash;
+        }
 
-        // Debug
-        return new Quest(QuestType.GetSomething, timeBeforeQuestFail,
-            PickupableObjectType.Beer);
+        return new Quest(typeOfQuest, timeBeforeQuestFail, objType);
     }
 
     void CreateNewQuest()
@@ -51,17 +58,37 @@ public class QuestManager : MonoBehaviour
         ChangeQuestTimers();
         CreateObjectsNeededForQuest(quest);
 
+        if(quest.TypeOfQuest == QuestType.ThrowTheTrashOut)
+        {
+            trashcan.QuestCreated(FinishQuest, quest);
+        }
+
         Debug.Log("New quest: " + quest.TypeOfQuest);
     }
 
     void CreateObjectsNeededForQuest(Quest quest)
     {
+        Transform randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
+        GameObject objToDestroyLater;
+
+        objectsToDestroyOnQuestFinish[quest] = new List<GameObject>();
+
         if(quest.TypeOfQuest == QuestType.GetSomething)
         {
-            GameObject trigger = Instantiate(itemReceiverPrefab, new Vector3(-101, 0, -23), Quaternion.identity);
-            trigger.GetComponent<ObjectTrigger>().QuestCreated(FinishQuest, quest);
-            objectsToDestroyOnQuestFinish[quest] = trigger;
+            objToDestroyLater = Instantiate(itemReceiverPrefab, randomNpc.position, Quaternion.identity);
+            objToDestroyLater.GetComponent<ObjectTrigger>().QuestCreated(FinishQuest, quest);
+            objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
         }
+        else if(quest.TypeOfQuest == QuestType.ThrowTheTrashOut)
+        {
+            objToDestroyLater = Instantiate(trashPrefab, randomNpc.Find("TrashSpawnPosition").position, Quaternion.identity);
+            objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
+        }
+
+        // Create quest marker
+        objToDestroyLater = Instantiate(questMarkerPrefab, ui.transform);
+        objToDestroyLater.GetComponent<PointTowardsQuest>().questWorldPosition = randomNpc.position + new Vector3(0, 2.5f, 0);
+        objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
     }
 
     void FinishQuest(Quest finishedQuest)
@@ -83,12 +110,18 @@ public class QuestManager : MonoBehaviour
         DestroyQuestObjects(questToFail);
 
         activeQuests.Remove(questToFail);
+        // TODO: Remove score.
     }
 
     void DestroyQuestObjects(Quest quest)
     {
         if (objectsToDestroyOnQuestFinish.ContainsKey(quest))
-            Destroy(objectsToDestroyOnQuestFinish[quest]);
+        {
+            foreach (GameObject g in objectsToDestroyOnQuestFinish[quest])
+            {
+                Destroy(g);
+            }
+        }
     }
 
     void ChangeQuestTimers()

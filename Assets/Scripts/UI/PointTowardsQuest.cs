@@ -36,8 +36,6 @@ public class PointTowardsQuest : MonoBehaviour
                 questScreenPosition = cam.WorldToScreenPoint(tempQuestWorldPos);
             }
 
-            Debug.Log(Vector3.Distance(playerTransform.position, questWorldPosition));
-
             float xMultiplier = 1;
             float yMultiplier = 1;
 

@@ -8,6 +8,14 @@ public class PickupableObjects : MonoBehaviour
 {
     public PickupableObjectType ObjectType;
 
+    private void OnDestroy()
+    {
+        PickupObjects pickup = FindObjectOfType<PickupObjects>();
+        
+        if(pickup != null)
+            pickup.ObjDestroyed(this.gameObject);
+    }
+
     private void Awake()
     {
         if(ObjectType == PickupableObjectType.None)

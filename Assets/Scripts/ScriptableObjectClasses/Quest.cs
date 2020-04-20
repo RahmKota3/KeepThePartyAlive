@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum QuestType { None, GetSomething, Basketball, ChangeMusic }
+public enum QuestType { None, GetSomething, ThrowTheTrashOut, ChangeMusic }
 
 public class Quest
 {

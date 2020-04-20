@@ -24,6 +24,7 @@ public class ObjectTrigger : MonoBehaviour
         {
             Destroy(other.gameObject);
             OnObjectReceived?.Invoke(activeQuest);
+            OnObjectReceived = null;
         }
     }
 }
