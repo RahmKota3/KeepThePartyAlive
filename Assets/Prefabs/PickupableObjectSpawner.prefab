@@ -150,6 +150,14 @@ MonoBehaviour:
   - {fileID: 7465407401976774696, guid: 6ecf6681a5b3dc144acceefbd4a3ef8b, type: 3}
   - {fileID: 5126596888793040184, guid: 31970b6b9a4f8314297a762edc9acbd9, type: 3}
   objSprite: {fileID: 964728340}
+  pickupableObjectSprites:
+  - {fileID: 21300000, guid: 962b9e6d0ecf6bb4f9b8ab2871c4d332, type: 3}
+  - {fileID: 21300000, guid: 1824e18e7f491964d9c74c79ee9ae670, type: 3}
+  - {fileID: 21300000, guid: ea40e71492cf8ed4eabc97b594d24338, type: 3}
+  - {fileID: 21300000, guid: fc14155f4a163814f9b88577854001ae, type: 3}
+  - {fileID: 21300000, guid: c00e821155e6b4544b90d69f0b8b385a, type: 3}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 696a0bd1a271e1041a06cb23d24add4f, type: 3}
 --- !u!1 &1831269176504704575
 GameObject:
   m_ObjectHideFlags: 0
