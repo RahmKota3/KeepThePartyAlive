@@ -75,7 +75,7 @@ public class QuestManager : MonoBehaviour
 
         if(quest.TypeOfQuest == QuestType.GetSomething)
         {
-            objToDestroyLater = Instantiate(itemReceiverPrefab, randomNpc.position, Quaternion.identity);
+            objToDestroyLater = Instantiate(itemReceiverPrefab, randomNpc.position, Quaternion.identity, randomNpc);
             objToDestroyLater.GetComponent<ObjectTrigger>().QuestCreated(FinishQuest, quest);
             objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
         }

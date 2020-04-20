@@ -77,6 +77,11 @@ public class PickupObjects : MonoBehaviour
         OnPickUp?.Invoke(pickedUpObjectType);
 
         playerAnimations.ActivateAnimation(AnimationType.PickingUp);
+
+        FreezePosition freezePos = pickedUpRigidbody.gameObject.GetComponent<FreezePosition>();
+
+        if (freezePos != null)
+            freezePos.UnFreezePos();
     }
 
     void DropObject()
@@ -87,6 +92,11 @@ public class PickupObjects : MonoBehaviour
             col = pickedUpRigidbody.gameObject.GetComponents<SphereCollider>()[1];
 
         col.enabled = true;
+
+        FreezePosition freezePos = pickedUpRigidbody.gameObject.GetComponent<FreezePosition>();
+
+        if (freezePos != null)
+            freezePos.FreezePos();
 
         pickedUpRigidbody.isKinematic = false;
         pickedUpRigidbody.gameObject.transform.parent = null;

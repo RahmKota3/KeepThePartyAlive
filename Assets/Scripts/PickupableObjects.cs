@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PickupableObjectType { None, Beer, Soda, Chips, Trash, Trashbag, Ball }
+public enum PickupableObjectType { None, Beer, Soda, Chips, Trash, Trashbag, Ball, Guest }
 
 public class PickupableObjects : MonoBehaviour
 {
