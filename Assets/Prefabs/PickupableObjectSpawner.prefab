@@ -151,6 +151,7 @@ MonoBehaviour:
   - {fileID: 5126596888793040184, guid: 31970b6b9a4f8314297a762edc9acbd9, type: 3}
   objSprite: {fileID: 964728340}
   pickupableObjectSprites:
+  - {fileID: 0}
   - {fileID: 21300000, guid: 962b9e6d0ecf6bb4f9b8ab2871c4d332, type: 3}
   - {fileID: 21300000, guid: 1824e18e7f491964d9c74c79ee9ae670, type: 3}
   - {fileID: 21300000, guid: ea40e71492cf8ed4eabc97b594d24338, type: 3}
