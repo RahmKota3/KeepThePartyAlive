@@ -42,7 +42,6 @@ public class PickupableSpawner : MonoBehaviour
 
     private void Start()
     {
-        // TODO: 
         SpawnPickupableObject();
 
         objSprite.GetComponent<SpriteRenderer>().sprite = pickupableObjectSprites[(int)typeToSpawn];

@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8265278304197622154
 CanvasRenderer:
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b03af8bd020f14c9a89b7a09e49c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskImage: {fileID: 0}
+  taskImage: {fileID: 8265278304197622157}
   questWorldTransform: {fileID: 0}
   taskSprites:
   - {fileID: 0}
@@ -96,3 +96,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4ae34dfc1503085479eae05e8c45461c, type: 3}
   - {fileID: 21300000, guid: c0fb2f67078b0c24cbb4ee64d26a38b7, type: 3}
   - {fileID: 21300000, guid: ea56f729c315d7a479873bbb81f65f66, type: 3}
+  bringItemSprites:
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 2684ac8bad308be488c1bae2bfe2d962, type: 3}
+  - {fileID: 21300000, guid: a3e175be9d5422a44a844b4cefe24e0f, type: 3}
+  - {fileID: 21300000, guid: 0c790d7a174c2e54597a66c51f12fb47, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

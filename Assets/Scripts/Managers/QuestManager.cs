@@ -77,8 +77,8 @@ public class QuestManager : MonoBehaviour
 
         if(typeOfQuest == QuestType.GetSomething)
         {
-            // Debug
-            objType = PickupableObjectType.Beer;
+            objType = (PickupableObjectType)RandomExtension.ChooseFromMultiple(new List<int> { (int)PickupableObjectType.Beer,
+                (int)PickupableObjectType.Chips, (int)PickupableObjectType.Soda });
         }
         else if(typeOfQuest == QuestType.ThrowTheTrashOut)
         {
@@ -142,7 +142,9 @@ public class QuestManager : MonoBehaviour
         }
 
         objToDestroyLater = Instantiate(questMarkerPrefab, ui.transform);
-        objToDestroyLater.GetComponent<PointTowardsQuest>().questWorldTransform = quest.Npc;
+        PointTowardsQuest questMarker = objToDestroyLater.GetComponent<PointTowardsQuest>();
+        questMarker.questWorldTransform = quest.Npc;
+        questMarker.SetSprite(quest.TypeOfQuest, quest.TypeToGet);
         objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
     }
 
@@ -183,7 +185,9 @@ public class QuestManager : MonoBehaviour
         if (questToFail.Npc != null)
         {
             ChangeNpcsState(questToFail);
-            questToFail.Npc.GetComponent<QuestState>().ActiveQuest.TypeOfQuest = QuestType.None;
+            QuestState qState = questToFail.Npc.GetComponent<QuestState>();
+            if(qState.ActiveQuest != null)
+                qState.ActiveQuest.TypeOfQuest = QuestType.None;
         }
     }
 

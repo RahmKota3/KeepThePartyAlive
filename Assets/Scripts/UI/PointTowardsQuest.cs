@@ -8,7 +8,7 @@ public class PointTowardsQuest : MonoBehaviour
     [SerializeField] Image taskImage;
 
     public Transform questWorldTransform;
-    Vector3 questWorldPosition { get { return questWorldTransform.position + new Vector3(0, 2.5f, 0); } }
+    Vector3 questWorldPosition { get { return questWorldTransform.position + new Vector3(0, 3f, 0); } }
 
     Camera cam;
 
@@ -16,6 +16,9 @@ public class PointTowardsQuest : MonoBehaviour
 
     [Tooltip(GlobalVariables.QuestTypeTooltip)]
     [SerializeField] List<Sprite> taskSprites = new List<Sprite>(5);
+
+    [Tooltip(GlobalVariables.PickupableObjectTypeTooltip)]
+    [SerializeField] List<Sprite> bringItemSprites = new List<Sprite>(8);
 
     void FollowQuestPosition()
     {
@@ -58,11 +61,19 @@ public class PointTowardsQuest : MonoBehaviour
             if (questScreenPosition.y >= Screen.height)
                 questScreenPosition.y = Screen.height;
 
-            offset = new Vector3(-100 * xMultiplier, -100 * yMultiplier, 0);
+            offset = new Vector3(-150 * xMultiplier, -150 * yMultiplier, 0);
         }
 
         questScreenPosition.z = 0;
         transform.position = questScreenPosition + offset;
+    }
+
+    public void SetSprite(QuestType type, PickupableObjectType objType)
+    {
+        if (type != QuestType.GetSomething)
+            taskImage.sprite = taskSprites[(int)type];
+        else
+            taskImage.sprite = bringItemSprites[(int)objType];
     }
 
     private void Awake()

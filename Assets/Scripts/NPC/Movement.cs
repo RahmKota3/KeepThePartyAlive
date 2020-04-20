@@ -11,10 +11,11 @@ public class Movement : MonoBehaviour
     NavMeshAgent agent;
     NavMeshObstacle obstacle;
     NPCAnimations animator;
+    StateMachine stateMachine;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enterance")
+        if(other.gameObject.tag == "Enterance" && stateMachine.CurrentState == NpcState.Angry)
         {
             Destroy(this.gameObject);
         }
@@ -37,6 +38,7 @@ public class Movement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         obstacle = GetComponent<NavMeshObstacle>();
         animator = GetComponent<NPCAnimations>();
+        stateMachine = GetComponent<StateMachine>();
 
         GetComponent<StateMachine>().OnStateChanged += FleeTheParty;
     }
