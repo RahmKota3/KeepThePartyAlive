@@ -152,11 +152,11 @@ MonoBehaviour:
   objSprite: {fileID: 964728340}
   pickupableObjectSprites:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 962b9e6d0ecf6bb4f9b8ab2871c4d332, type: 3}
-  - {fileID: 21300000, guid: 1824e18e7f491964d9c74c79ee9ae670, type: 3}
-  - {fileID: 21300000, guid: ea40e71492cf8ed4eabc97b594d24338, type: 3}
+  - {fileID: 21300000, guid: 9166a0a6d386522409902b75a1294444, type: 3}
+  - {fileID: 21300000, guid: 71516453f28f9ce4e9f7a1db5ed1450f, type: 3}
+  - {fileID: 21300000, guid: b43ef119d84ae9b429d1df97385c2a12, type: 3}
   - {fileID: 21300000, guid: fc14155f4a163814f9b88577854001ae, type: 3}
-  - {fileID: 21300000, guid: c00e821155e6b4544b90d69f0b8b385a, type: 3}
+  - {fileID: 21300000, guid: ba9d3e7ebb0391d4eb937116ca662203, type: 3}
   - {fileID: 0}
   - {fileID: 21300000, guid: 696a0bd1a271e1041a06cb23d24add4f, type: 3}
 --- !u!1 &1831269176504704575

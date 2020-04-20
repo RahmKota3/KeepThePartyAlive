@@ -92,7 +92,7 @@ MonoBehaviour:
   questWorldTransform: {fileID: 0}
   taskSprites:
   - {fileID: 0}
-  - {fileID: 21300000, guid: 83f99be22dd8d0c4790b6632611cab29, type: 3}
-  - {fileID: 21300000, guid: 459cb56e54f869c4aaf4c2a0ea0b33a2, type: 3}
-  - {fileID: 21300000, guid: 99cbd81960d1eab45b1ccb5bf8ac1a38, type: 3}
-  - {fileID: 21300000, guid: f8250ed4f7b0a7842857473ca62470ca, type: 3}
+  - {fileID: 21300000, guid: 2684ac8bad308be488c1bae2bfe2d962, type: 3}
+  - {fileID: 21300000, guid: 4ae34dfc1503085479eae05e8c45461c, type: 3}
+  - {fileID: 21300000, guid: c0fb2f67078b0c24cbb4ee64d26a38b7, type: 3}
+  - {fileID: 21300000, guid: ea56f729c315d7a479873bbb81f65f66, type: 3}
