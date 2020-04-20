@@ -14,6 +14,15 @@ public class ScoreManager : MonoBehaviour
 
     public System.Action<int> OnScoreChange;
 
+    public void ResetScore(SceneType type)
+    {
+        if (type != SceneType.Gameplay)
+            return;
+
+        score = 0;
+        OnScoreChange?.Invoke(score);
+    }
+
     public void IncreaseScore()
     {
         score += scoreForFinishedQuest;
@@ -26,14 +35,25 @@ public class ScoreManager : MonoBehaviour
         OnScoreChange?.Invoke(score);
     }
 
-    void IncreaseScoreForEveryHappyGuest()
+    void IncreaseScoreForEveryHappyGuest(SceneType typeOfScene)
     {
+        if (typeOfScene != SceneType.FinalScore)
+            return;
+
         score += NPCManager.Instance.NPCs.Count * scoreForEveryHappyGuest;
+        OnScoreChange?.Invoke(score);
+    }
+
+    void PushScoreUpdate()
+    {
         OnScoreChange?.Invoke(score);
     }
 
     private void Awake()
     {
         Instance = this;
+        LevelManager.Instance.OnBeforeSceneTypeLoaded += ResetScore;
+        LevelManager.Instance.OnAfterSceneLoad += PushScoreUpdate;
+        LevelManager.Instance.OnBeforeSceneTypeLoaded += IncreaseScoreForEveryHappyGuest;
     }
 }

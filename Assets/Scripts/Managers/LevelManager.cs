@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public enum SceneType { Gameplay, MainMenu }
+public enum SceneType { Gameplay, MainMenu, FinalScore }
 
 public class LevelManager : MonoBehaviour
 {
@@ -12,8 +12,10 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] string gameplaySceneName = "Gameplay";
     [SerializeField] string mainMenuSceneName = "MainMenu";
+    [SerializeField] string finalScoreSceneName = "";
 
     public Action OnBeforeSceneLoad;
+    public Action<SceneType> OnBeforeSceneTypeLoaded;
     public Action OnAfterSceneLoad;
 
     public void RestartLevel()
@@ -24,6 +26,7 @@ public class LevelManager : MonoBehaviour
     public void LoadScene(SceneType typeToLoad)
     {
         OnBeforeSceneLoad?.Invoke();
+        OnBeforeSceneTypeLoaded?.Invoke(typeToLoad);
 
         SceneManager.LoadScene(GetSceneName(typeToLoad));
     }
@@ -42,6 +45,9 @@ public class LevelManager : MonoBehaviour
 
             case SceneType.MainMenu:
                 return mainMenuSceneName;
+
+            case SceneType.FinalScore:
+                return finalScoreSceneName;
 
             default:
                 Debug.LogError("Scene not implemented: " + type);

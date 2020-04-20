@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 1495919563153585773}
   - component: {fileID: 1495919563153585772}
   - component: {fileID: 1495919563153585768}
+  - component: {fileID: 799830183034365849}
   m_Layer: 5
   m_Name: GameplayUi
   m_TagString: Untagged
@@ -235,6 +236,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 21300000, guid: 696a0bd1a271e1041a06cb23d24add4f, type: 3}
   pickedUpObjectDisplay: {fileID: 1495919562446936457}
+--- !u!114 &799830183034365849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495919563153585775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0484e218f400ae446bf08628234fc2c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 7004014412858966305}
 --- !u!1 &9153622341019147865
 GameObject:
   m_ObjectHideFlags: 0

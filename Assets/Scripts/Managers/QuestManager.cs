@@ -161,9 +161,10 @@ public class QuestManager : MonoBehaviour
         DestroyQuestObjects(finishedQuest);
 
         activeQuests.Remove(finishedQuest);
-        // TODO: Add score.
 
         finishedQuest.Npc.GetComponent<NPCAnimations>().ChangeAnimation(AnimationType.Dancing);
+
+        ScoreManager.Instance.IncreaseScore();
     }
 
     void FailQuest(Quest questToFail)
@@ -175,7 +176,6 @@ public class QuestManager : MonoBehaviour
         DestroyQuestObjects(questToFail);
 
         activeQuests.Remove(questToFail);
-        // TODO: Remove score.
 
         if(questToFail.Npc != null && questToFail.TypeOfQuest == QuestType.Puking)
         {

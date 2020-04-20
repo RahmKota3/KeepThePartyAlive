@@ -120,27 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &147063089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6975278613551601258, guid: 625d491b3063dd1498961122de8bd723,
-    type: 3}
-  m_PrefabInstance: {fileID: 1961622661}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &147063090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147063089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5262d491528af6d47a21e04140fb981a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreForFinishedQuest: 100
-  scoreForUnhappyGuest: -200
-  scoreForEveryHappyGuest: 50
 --- !u!1 &1865256940
 GameObject:
   m_ObjectHideFlags: 0

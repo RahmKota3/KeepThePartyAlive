@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6809884603037938763}
   - component: {fileID: 7939052403882123098}
   - component: {fileID: 147063090}
+  - component: {fileID: 8333532424263047564}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplaySceneName: Gameplay
   mainMenuSceneName: MainMenu
+  finalScoreSceneName: 
 --- !u!114 &6809884603037938763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,3 +100,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Randomize: 1
+--- !u!114 &8333532424263047564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6975278613551601258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5262d491528af6d47a21e04140fb981a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreForFinishedQuest: 100
+  scoreForUnhappyGuest: -200
+  scoreForEveryHappyGuest: 50

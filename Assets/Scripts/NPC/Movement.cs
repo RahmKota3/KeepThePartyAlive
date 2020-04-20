@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     {
         if(other.gameObject.tag == "Enterance" && stateMachine.CurrentState == NpcState.Angry)
         {
+            ScoreManager.Instance.DecreaseScore();
             Destroy(this.gameObject);
         }
     }
