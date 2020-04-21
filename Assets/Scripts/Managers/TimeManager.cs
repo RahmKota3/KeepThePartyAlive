@@ -55,16 +55,13 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (LevelManager.Instance.CurrentScene != SceneType.Gameplay)
+        if (LevelManager.Instance.CurrentScene != SceneType.Gameplay || Application.isPlaying == false)
         {
             GameTime = 0;
             return;
         }
 
         GameTime += Time.deltaTime;
-
-        if (GameTime >= 5)
-            EndGame();
 
         if (GameTime >= gameplayTimeMinutes * 60)
             EndGame();

@@ -14,7 +14,7 @@ public class NPCManager : MonoBehaviour
 
         if(NPCs.Count == 0)
         {
-            if(LevelManager.Instance.CurrentScene == SceneType.Gameplay)
+            if(LevelManager.Instance.CurrentScene == SceneType.Gameplay && Application.isPlaying)
                 LevelManager.Instance.LoadScene(SceneType.LoseScreen);
         }
     }
@@ -31,7 +31,7 @@ public class NPCManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F1))
+        if(Input.GetKeyDown(KeyCode.F1) && Application.isPlaying)
             LevelManager.Instance.LoadScene(SceneType.LoseScreen);
     }
 }
