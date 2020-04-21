@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
         if(other.gameObject.tag == "Enterance" && stateMachine.CurrentState == NpcState.Angry)
         {
             ScoreManager.Instance.DecreaseScore();
+            NPCManager.Instance.RemoveNpcFromList(this.gameObject);
             Destroy(this.gameObject);
         }
     }
@@ -46,6 +47,6 @@ public class Movement : MonoBehaviour
 
     private void OnDestroy()
     {
-        NPCManager.Instance.RemoveNpcFromList(this.gameObject);
+        //NPCManager.Instance.RemoveNpcFromList(this.gameObject);
     }
 }
