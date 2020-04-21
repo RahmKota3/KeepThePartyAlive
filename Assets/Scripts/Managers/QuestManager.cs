@@ -26,6 +26,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] Jukebox jukebox;
 
     PickupObjects playerPickupObjs;
+    bool changeMusicQuestActive = false;
 
     List<Quest> activeQuests = new List<Quest>();
     Dictionary<Quest, List<GameObject>> objectsToDestroyOnQuestFinish = new Dictionary<Quest, List<GameObject>>();
@@ -59,6 +60,12 @@ public class QuestManager : MonoBehaviour
 
         QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
 
+        while(typeOfQuest == QuestType.ChangeMusic && changeMusicQuestActive)
+        {
+            typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
+                (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 25, 5 });
+        }
+
         if (npcActiveQuest.ActiveQuest != null) 
         {
             while (npcActiveQuest.ActiveQuest.TypeOfQuest == QuestType.Puking)
@@ -76,14 +83,18 @@ public class QuestManager : MonoBehaviour
 
         PickupableObjectType objType = PickupableObjectType.None;
 
-        if(typeOfQuest == QuestType.GetSomething)
+        if (typeOfQuest == QuestType.GetSomething)
         {
             objType = (PickupableObjectType)RandomExtension.ChooseFromMultiple(new List<int> { (int)PickupableObjectType.Beer,
                 (int)PickupableObjectType.Chips, (int)PickupableObjectType.Soda });
         }
-        else if(typeOfQuest == QuestType.ThrowTheTrashOut)
+        else if (typeOfQuest == QuestType.ThrowTheTrashOut)
         {
             objType = PickupableObjectType.Trash;
+        }
+        else if (typeOfQuest == QuestType.ChangeMusic)
+        {
+            changeMusicQuestActive = true;
         }
 
         return new Quest(typeOfQuest, timeBeforeQuestFail, objType, randomNpc);
@@ -155,7 +166,16 @@ public class QuestManager : MonoBehaviour
 
     void FinishQuest(Quest finishedQuest)
     {
+        if (finishedQuest == null)
+            return;
+
         Debug.Log("Finished quest: " + finishedQuest.TypeOfQuest);
+
+        if (finishedQuest.TypeOfQuest == QuestType.ChangeMusic)
+        {
+            jukebox.ResetQuest();
+            changeMusicQuestActive = false;
+        }
 
         finishedQuest.Npc.GetComponent<QuestState>().ActiveQuest.TypeOfQuest = QuestType.None;
 

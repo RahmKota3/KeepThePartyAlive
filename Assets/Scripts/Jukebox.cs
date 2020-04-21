@@ -15,6 +15,11 @@ public class Jukebox : MonoBehaviour
         this.quest = quest;
     }
 
+    public void ResetQuest()
+    {
+        quest = null;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -39,6 +44,6 @@ public class Jukebox : MonoBehaviour
 
     private void Awake()
     {
-        InputManager.Instance.OnThrowButtonPressed += ChangeMusic;
+        InputManager.Instance.OnPickUpButtonPressed += ChangeMusic;
     }
 }
