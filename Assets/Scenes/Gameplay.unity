@@ -264,7 +264,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &135300509
 GameObject:
@@ -408,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 8929776588182783940, guid: 05b7ba7effa099b448e6c038f3d3a5bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8929776588182783940, guid: 05b7ba7effa099b448e6c038f3d3a5bc,
         type: 3}
@@ -476,7 +476,7 @@ Transform:
   - {fileID: 1441028055}
   - {fileID: 1980770133}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &207733875
 PrefabInstance:
@@ -490,11 +490,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (24)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,6 +545,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &207733876 stripped
@@ -570,11 +570,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (18)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -630,6 +625,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &251830631 stripped
@@ -691,7 +691,7 @@ Transform:
   - {fileID: 923337470}
   - {fileID: 207733876}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &305984467
 PrefabInstance:
@@ -705,11 +705,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -765,6 +760,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &305984468 stripped
@@ -865,11 +865,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (22)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -925,6 +920,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &402831901 stripped
@@ -1081,11 +1081,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1141,6 +1136,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &598906648 stripped
@@ -1161,11 +1161,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1221,6 +1216,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &608111814 stripped
@@ -1318,7 +1318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &709540208
 GameObject:
@@ -1426,11 +1426,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (23)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1486,6 +1481,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &923337470 stripped
@@ -1525,7 +1525,7 @@ Transform:
   - {fileID: 891952}
   - {fileID: 307141851}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -1539,7 +1539,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1605,12 +1604,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.51779366, y: -0.0000028381999, z: 0.0000046615282, w: -0.8555055}
+  m_LocalRotation: {x: -0.51779366, y: -0.0000027851256, z: 0.000004629405, w: -0.8555055}
   m_LocalPosition: {x: -90, y: 8.73, z: -28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 60.000004, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1650,66 +1649,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &963194230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 963194228}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &983774006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,13 +1710,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983774006}
-  m_LocalRotation: {x: -0.51779366, y: -0.0000028381999, z: 0.0000046615282, w: -0.8555055}
+  m_LocalRotation: {x: -0.51779366, y: -0.0000027851256, z: 0.000004629405, w: -0.8555055}
   m_LocalPosition: {x: -90, y: 8.73, z: -28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 709540209}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1107060826
 PrefabInstance:
@@ -1791,11 +1730,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (17)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1851,6 +1785,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1107060827 stripped
@@ -1871,11 +1810,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1931,6 +1865,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1192564959 stripped
@@ -1951,11 +1890,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2011,6 +1945,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1205734386 stripped
@@ -2155,11 +2094,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2220,6 +2154,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1352108522 stripped
@@ -2240,11 +2179,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2300,6 +2234,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1382734780 stripped
@@ -2352,11 +2291,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2412,6 +2346,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1469061503 stripped
@@ -2420,54 +2359,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1469061502}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1582564670
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1582564672}
-  - component: {fileID: 1582564671}
-  m_Layer: 8
-  m_Name: PPV
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1582564671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582564670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 7e838d87830567d44a3b32f6be3383b2, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!4 &1582564672
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582564670}
-  m_LocalRotation: {x: -0.51779366, y: -0.0000028381999, z: 0.0000046615282, w: -0.8555055}
-  m_LocalPosition: {x: -90, y: 8.73, z: -28.57}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1619612950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2480,11 +2371,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (15)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2540,6 +2426,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1619612951 stripped
@@ -2560,11 +2451,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2620,6 +2506,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1694245250 stripped
@@ -2640,11 +2531,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2700,6 +2586,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1757503926 stripped
@@ -2720,11 +2611,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (20)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2780,6 +2666,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1793854772 stripped
@@ -2800,11 +2691,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2860,6 +2746,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1819388033 stripped
@@ -2880,11 +2771,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2940,6 +2826,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1845078875 stripped
@@ -2960,11 +2851,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3020,6 +2906,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &1912819307 stripped
@@ -12260,11 +12151,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12320,6 +12206,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &2033097527 stripped
@@ -12340,11 +12231,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12400,6 +12286,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &2107162837 stripped
@@ -12420,11 +12311,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (21)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12480,6 +12366,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &2124189736 stripped
@@ -12500,11 +12391,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC (19)
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12560,6 +12446,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &2133938169 stripped
@@ -12624,7 +12515,7 @@ PrefabInstance:
     - target: {fileID: 1495919563153585771, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1495919563153585771, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
         type: 3}
@@ -12802,11 +12693,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
-    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
-        type: 3}
-      propertyPath: houseEnterance
-      value: 
-      objectReference: {fileID: 2140458350}
     - target: {fileID: 5366726328263121800, guid: deb26f4f4c71fa546b43b3dfd855a70c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12867,6 +12753,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1536411193222409735, guid: deb26f4f4c71fa546b43b3dfd855a70c,
+        type: 3}
+      propertyPath: houseEnterance
+      value: 
+      objectReference: {fileID: 2140458350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb26f4f4c71fa546b43b3dfd855a70c, type: 3}
 --- !u!4 &5366726328107399433 stripped
@@ -12925,7 +12816,7 @@ PrefabInstance:
     - target: {fileID: 7870037588196018222, guid: c4c077f18d2400343a619d40b1bda560,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7870037588196018222, guid: c4c077f18d2400343a619d40b1bda560,
         type: 3}
@@ -13034,7 +12925,7 @@ PrefabInstance:
     - target: {fileID: 8156256084455307225, guid: de11526a327184c448bce11cd5f387e6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8156256084455307225, guid: de11526a327184c448bce11cd5f387e6,
         type: 3}
@@ -13103,7 +12994,7 @@ PrefabInstance:
     - target: {fileID: 8798533202521958640, guid: 6f3b6e2ef83897545b3f228e30888f99,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8798533202521958640, guid: 6f3b6e2ef83897545b3f228e30888f99,
         type: 3}
