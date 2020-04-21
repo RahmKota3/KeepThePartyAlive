@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
 
-    [SerializeField] int gameplayTimeMinutes = 5;
+    public int GameplayTimeMinutes = 3;
 
     public float GameTime = 0;
 
@@ -63,7 +63,7 @@ public class TimeManager : MonoBehaviour
 
         GameTime += Time.deltaTime;
 
-        if (GameTime >= gameplayTimeMinutes * 60)
+        if (GameTime >= GameplayTimeMinutes * 60)
             EndGame();
     }
 }

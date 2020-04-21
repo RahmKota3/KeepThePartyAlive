@@ -8,9 +8,15 @@ public class NPCManager : MonoBehaviour
 
     public List<GameObject> NPCs;
 
+    public int? StartingNpcAmount = null;
+
+    public System.Action<int> OnNpcAmountChanged;
+
     public void RemoveNpcFromList(GameObject npc)
     {
         NPCs.Remove(npc);
+
+        OnNpcAmountChanged?.Invoke(NPCs.Count);
 
         if(NPCs.Count == 0)
         {
@@ -31,7 +37,13 @@ public class NPCManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F1) && Application.isPlaying)
+        if(Input.GetKeyDown(KeyCode.F1) && Application.isPlaying && Application.isEditor)
             LevelManager.Instance.LoadScene(SceneType.LoseScreen);
+
+        if (StartingNpcAmount.HasValue == false)
+        {
+            StartingNpcAmount = NPCs.Count;
+            OnNpcAmountChanged?.Invoke(StartingNpcAmount.Value);
+        }
     }
 }
