@@ -8,6 +8,7 @@ public class ObjectTrigger : MonoBehaviour
     [SerializeField] PickupableObjectType acceptedType;
 
     public Action<Quest> OnObjectReceived;
+    Action<Quest> questFinishAction;
     Quest activeQuest;
 
     public void QuestCreated(Action<Quest> actionOnItemReceived, Quest quest)
@@ -15,15 +16,29 @@ public class ObjectTrigger : MonoBehaviour
         OnObjectReceived += actionOnItemReceived;
         activeQuest = quest;
         acceptedType = activeQuest.TypeToGet;
+
+        questFinishAction = actionOnItemReceived;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "PickupableObject" && other.isTrigger == false && 
-            other.GetComponent<PickupableObjects>().ObjectType == acceptedType)
+        if (other.gameObject.tag == "PickupableObject" && other.isTrigger == false)
         {
+            PickupableObjects obj = other.GetComponent<PickupableObjects>();
+
+            if (obj.ObjectType != acceptedType)
+                return;
+
+            if (obj.ObjectType != PickupableObjectType.Trash)
+            {
+                OnObjectReceived?.Invoke(activeQuest);
+            }
+            else
+            {
+                questFinishAction?.Invoke(obj.AssignedQuest);
+            }
+
             Destroy(other.gameObject);
-            OnObjectReceived?.Invoke(activeQuest);
             //OnObjectReceived = null;
         }
     }
@@ -37,5 +52,10 @@ public class ObjectTrigger : MonoBehaviour
     private void Awake()
     {
         LevelManager.Instance.OnBeforeSceneLoad += ResetAction;
+    }
+
+    private void OnDestroy()
+    {
+        OnObjectReceived = null;
     }
 }

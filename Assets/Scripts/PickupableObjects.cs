@@ -8,6 +8,8 @@ public class PickupableObjects : MonoBehaviour
 {
     public PickupableObjectType ObjectType;
 
+    public Quest AssignedQuest;
+
     private void OnDestroy()
     {
         PickupObjects pickup = FindObjectOfType<PickupObjects>();

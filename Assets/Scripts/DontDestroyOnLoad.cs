@@ -8,8 +8,6 @@ public class DontDestroyOnLoad : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
 
-        // TODO: Change this after main menu is added.
-        //LevelManager.Instance.LoadScene(SceneType.Gameplay);
         LevelManager.Instance.LoadScene(SceneType.MainMenu);
     }
 }

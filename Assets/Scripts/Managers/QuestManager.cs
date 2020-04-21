@@ -57,7 +57,7 @@ public class QuestManager : MonoBehaviour
 
         // Debug
         //typeOfQuest = QuestType.Puking;
-        typeOfQuest = QuestType.ThrowTheTrashOut;
+        //typeOfQuest = QuestType.ThrowTheTrashOut;
         //typeOfQuest = QuestType.GetSomething;
 
         QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
@@ -157,6 +157,7 @@ public class QuestManager : MonoBehaviour
         {
             objToDestroyLater = Instantiate(trashPrefab, quest.Npc.Find("TrashSpawnPosition").position, Quaternion.identity);
             objectsToDestroyOnQuestFinish[quest].Add(objToDestroyLater);
+            objToDestroyLater.GetComponent<PickupableObjects>().AssignedQuest = quest;
         }
 
         objToDestroyLater = Instantiate(questMarkerPrefab, ui.transform);
