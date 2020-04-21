@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1777a199a3b75e14b905b0a2139db1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenQuests: 25
-  timeBeforeQuestFail: 35
+  timeBetweenQuests: 20
+  timeBeforeQuestFail: 30
   timeBetweenQuestsReduction: 0.25
   timeBeforeQuestFailReduction: 0.25
   minTimeBetweenQuests: 10
