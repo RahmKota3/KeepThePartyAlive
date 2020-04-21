@@ -403,10 +403,6 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1680687455, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
 --- !u!1001 &6702195990987250468
