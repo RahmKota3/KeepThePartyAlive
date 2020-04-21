@@ -11,6 +11,12 @@ public class NPCManager : MonoBehaviour
     public void RemoveNpcFromList(GameObject npc)
     {
         NPCs.Remove(npc);
+
+        if(NPCs.Count == 0)
+        {
+            if(LevelManager.Instance.CurrentScene == SceneType.Gameplay)
+                LevelManager.Instance.LoadScene(SceneType.LoseScreen);
+        }
     }
 
     public void AddNpcToList(GameObject npc)
@@ -21,5 +27,11 @@ public class NPCManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F1))
+            LevelManager.Instance.LoadScene(SceneType.LoseScreen);
     }
 }

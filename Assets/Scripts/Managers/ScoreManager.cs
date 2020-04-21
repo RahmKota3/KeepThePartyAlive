@@ -10,7 +10,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] int scoreForUnhappyGuest = -200;
     [SerializeField] int scoreForEveryHappyGuest = 50;
 
-    int score = 0;
+    public int Score = 0;
+
+    public int AmountOfNpcs = 0;
 
     public System.Action<int> OnScoreChange;
 
@@ -19,34 +21,48 @@ public class ScoreManager : MonoBehaviour
         if (type != SceneType.Gameplay)
             return;
 
-        score = 0;
-        OnScoreChange?.Invoke(score);
+        Score = 0;
+        OnScoreChange?.Invoke(Score);
     }
 
     public void IncreaseScore()
     {
-        score += scoreForFinishedQuest;
-        OnScoreChange?.Invoke(score);
+        Score += scoreForFinishedQuest;
+        OnScoreChange?.Invoke(Score);
     }
 
     public void DecreaseScore()
     {
-        score += scoreForUnhappyGuest;
-        OnScoreChange?.Invoke(score);
+        Score += scoreForUnhappyGuest;
+        OnScoreChange?.Invoke(Score);
     }
 
-    void IncreaseScoreForEveryHappyGuest(SceneType typeOfScene)
-    {
-        if (typeOfScene != SceneType.FinalScore)
-            return;
+    //void IncreaseScoreForEveryHappyGuest(SceneType typeOfScene)
+    //{
+    //    if (typeOfScene != SceneType.WinScreen && typeOfScene != SceneType.LoseScreen)
+    //        return;
 
-        score += NPCManager.Instance.NPCs.Count * scoreForEveryHappyGuest;
-        OnScoreChange?.Invoke(score);
-    }
+    //    Debug.Log(AmountOfNpcs * scoreForEveryHappyGuest);
+
+    //    Score += (AmountOfNpcs * scoreForEveryHappyGuest);
+    //    OnScoreChange?.Invoke(Score);
+
+    //    SaveHighScore();
+    //}
 
     void PushScoreUpdate()
     {
-        OnScoreChange?.Invoke(score);
+        OnScoreChange?.Invoke(Score);
+    }
+
+    void SaveHighScore(SceneType typeOfScene)
+    {   
+        if (typeOfScene != SceneType.WinScreen && typeOfScene != SceneType.LoseScreen)
+            return;
+
+        if(PlayerPrefs.HasKey(GlobalVariables.HighScorePrefsName) == false || 
+            Score > PlayerPrefs.GetInt(GlobalVariables.HighScorePrefsName))
+            PlayerPrefs.SetInt(GlobalVariables.HighScorePrefsName, Score);
     }
 
     private void Awake()
@@ -54,6 +70,12 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
         LevelManager.Instance.OnBeforeSceneTypeLoaded += ResetScore;
         LevelManager.Instance.OnAfterSceneLoad += PushScoreUpdate;
-        LevelManager.Instance.OnBeforeSceneTypeLoaded += IncreaseScoreForEveryHappyGuest;
+        LevelManager.Instance.OnBeforeSceneTypeLoaded += SaveHighScore;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F8))
+            PlayerPrefs.DeleteKey(GlobalVariables.HighScorePrefsName);
     }
 }
