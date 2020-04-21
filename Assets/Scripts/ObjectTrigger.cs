@@ -24,7 +24,18 @@ public class ObjectTrigger : MonoBehaviour
         {
             Destroy(other.gameObject);
             OnObjectReceived?.Invoke(activeQuest);
-            OnObjectReceived = null;
+            //OnObjectReceived = null;
         }
+    }
+
+    void ResetAction()
+    {
+        OnObjectReceived = null;
+        LevelManager.Instance.OnBeforeSceneLoad -= ResetAction;
+    }
+
+    private void Awake()
+    {
+        LevelManager.Instance.OnBeforeSceneLoad += ResetAction;
     }
 }

@@ -57,8 +57,8 @@ public class QuestManager : MonoBehaviour
 
         // Debug
         //typeOfQuest = QuestType.Puking;
-        //typeOfQuest = QuestType.ThrowTheTrashOut;
-        typeOfQuest = QuestType.GetSomething;
+        typeOfQuest = QuestType.ThrowTheTrashOut;
+        //typeOfQuest = QuestType.GetSomething;
 
         QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
 
