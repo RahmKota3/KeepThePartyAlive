@@ -6,9 +6,16 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject ControlsObj;
 
+    bool controlsWindowOpen = false;
+
     public void LoadGameplayScene()
     {
         LevelManager.Instance.LoadScene(SceneType.Gameplay);
+    }
+
+    public void LoadMainMenuScene()
+    {
+        LevelManager.Instance.LoadScene(SceneType.MainMenu);
     }
 
     public void ExitGame()
@@ -17,8 +24,41 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void ShowHideControls(bool show)
+    public void ShowHideControls()
     {
-        ControlsObj.SetActive(show);
+        controlsWindowOpen = !controlsWindowOpen;
+
+        ControlsObj.SetActive(controlsWindowOpen);
+    }
+
+    void UnsubscribeMethods()
+    {
+        InputManager.Instance.OnPlayButtonPressed -= LoadGameplayScene;
+        InputManager.Instance.OnControlsButtonPressed -= ShowHideControls;
+        InputManager.Instance.OnExitButtonPressed -= ExitGame;
+
+        InputManager.Instance.OnMenuButtonPressed -= LoadMainMenuScene;
+        InputManager.Instance.OnRestartButtonPressed -= LoadGameplayScene;
+
+        LevelManager.Instance.OnBeforeSceneLoad -= UnsubscribeMethods;
+    }
+
+    private void Start()
+    {
+        if (LevelManager.Instance.CurrentScene == SceneType.MainMenu)
+        {
+            InputManager.Instance.OnPlayButtonPressed += LoadGameplayScene;
+            InputManager.Instance.OnControlsButtonPressed += ShowHideControls;
+            InputManager.Instance.OnExitButtonPressed += ExitGame;
+
+            LevelManager.Instance.OnBeforeSceneLoad += UnsubscribeMethods;
+        }
+        if (LevelManager.Instance.CurrentScene == SceneType.WinScreen || LevelManager.Instance.CurrentScene == SceneType.LoseScreen)
+        {
+            InputManager.Instance.OnMenuButtonPressed += LoadMainMenuScene;
+            InputManager.Instance.OnRestartButtonPressed += LoadGameplayScene;
+
+            LevelManager.Instance.OnBeforeSceneLoad += UnsubscribeMethods;
+        }
     }
 }

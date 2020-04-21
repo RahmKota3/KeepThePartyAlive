@@ -27,19 +27,13 @@ public class UI_TimeLeft : MonoBehaviour
         StartCoroutine(UpdateTimeTextCoroutine());
     }
 
-    void BeforeSceneChangeWrapUp()
-    {
-        StopAllCoroutines();
-        LevelManager.Instance.OnBeforeSceneLoad -= BeforeSceneChangeWrapUp;
-    }
-
-    private void Awake()
-    {
-        LevelManager.Instance.OnBeforeSceneLoad += BeforeSceneChangeWrapUp;
-    }
-
     private void Start()
     {
         StartCoroutine(UpdateTimeTextCoroutine());
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

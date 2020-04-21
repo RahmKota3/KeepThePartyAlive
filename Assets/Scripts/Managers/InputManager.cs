@@ -12,6 +12,12 @@ public class InputManager : MonoBehaviour
 
     public Action OnPickUpButtonPressed;
     public Action OnThrowButtonPressed;
+    public Action OnGameRestartButtonPressed;
+
+    public Action OnPlayButtonPressed;
+    public Action OnControlsButtonPressed;
+    public Action OnExitButtonPressed;
+    public Action OnMenuButtonPressed;
     public Action OnRestartButtonPressed;
 
     void CheckForInput()
@@ -24,6 +30,23 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Throw"))
             OnThrowButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("RestartGame"))
+            OnRestartButtonPressed?.Invoke();
+
+
+        // MainMenu
+        if (Input.GetButtonDown("Play"))
+            OnPlayButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("Controls"))
+            OnControlsButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("Exit"))
+            OnExitButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("Menu"))
+            OnMenuButtonPressed?.Invoke();
 
         if (Input.GetButtonDown("Restart"))
             OnRestartButtonPressed?.Invoke();
