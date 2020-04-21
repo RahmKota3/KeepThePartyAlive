@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1777a199a3b75e14b905b0a2139db1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenQuests: 30
-  timeBeforeQuestFail: 45
-  timeBetweenQuestsReduction: 0.1
-  timeBeforeQuestFailReduction: 0.1
+  timeBetweenQuests: 25
+  timeBeforeQuestFail: 35
+  timeBetweenQuestsReduction: 0.25
+  timeBeforeQuestFailReduction: 0.25
   minTimeBetweenQuests: 10
   minTimeBeforeQuestFails: 15
   pukeRange: 10
@@ -61,6 +61,7 @@ MonoBehaviour:
   ui: {fileID: 0}
   pukePrefab: {fileID: 4443750510526196318, guid: a3f6e262feb3c9b40bd0f8761f4916ab,
     type: 3}
+  jukebox: {fileID: 0}
 --- !u!114 &-3132110990681350747
 MonoBehaviour:
   m_ObjectHideFlags: 0

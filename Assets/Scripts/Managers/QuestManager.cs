@@ -39,7 +39,7 @@ public class QuestManager : MonoBehaviour
 
         int i = 0;
 
-        while (stateMachine.CurrentState == NpcState.Angry)
+        while (stateMachine.CurrentState != NpcState.Happy)
         {
             randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
             stateMachine = randomNpc.gameObject.GetComponent<StateMachine>();
@@ -47,7 +47,7 @@ public class QuestManager : MonoBehaviour
 
             if(i == 100)
             {
-                Debug.LogError("Everyone is propably leaving");
+                //Debug.LogError("Everyone is propably leaving");
                 return null;
             }
         }
@@ -106,6 +106,10 @@ public class QuestManager : MonoBehaviour
     {
         Coroutine c;
         Quest quest = GetRandomizedQuest();
+
+        if (quest == null)
+            return;
+
         activeQuests.Add(quest);
 
         TimeManager.Instance.StartQuestFailTimer(timeBeforeQuestFail, FailQuest, quest, out c);
