@@ -14900,6 +14900,11 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 909314501709574461, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7497038142565082450, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
         type: 3}
       propertyPath: m_Material
