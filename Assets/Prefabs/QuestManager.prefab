@@ -44,12 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1777a199a3b75e14b905b0a2139db1c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenQuests: 15
-  timeBeforeQuestFail: 15
-  timeBetweenQuestsReduction: 0
-  timeBeforeQuestFailReduction: 0
+  timeBetweenQuests: 30
+  timeBeforeQuestFail: 45
+  timeBetweenQuestsReduction: 0.1
+  timeBeforeQuestFailReduction: 0.1
   minTimeBetweenQuests: 10
-  minTimeBeforeQuestFails: 10
+  minTimeBeforeQuestFails: 15
   pukeRange: 10
   itemReceiverPrefab: {fileID: 8929776588182783939, guid: 05b7ba7effa099b448e6c038f3d3a5bc,
     type: 3}
