@@ -23,6 +23,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] ObjectTrigger trashcan;
     [SerializeField] GameObject ui;
     [SerializeField] GameObject pukePrefab;
+    [SerializeField] Jukebox jukebox;
 
     PickupObjects playerPickupObjs;
 
@@ -105,6 +106,10 @@ public class QuestManager : MonoBehaviour
         if(quest.TypeOfQuest == QuestType.ThrowTheTrashOut)
         {
             trashcan.QuestCreated(FinishQuest, quest);
+        }
+        else if(quest.TypeOfQuest == QuestType.ChangeMusic)
+        {
+            jukebox.QuestCreated(FinishQuest, quest);
         }
 
         if(quest.TypeOfQuest != QuestType.Puking)
