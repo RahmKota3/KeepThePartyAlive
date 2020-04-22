@@ -74,7 +74,7 @@ public class QuestManager : MonoBehaviour
             (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 55, 10, 25, 10 });
 
         // Debug
-        typeOfQuest = QuestType.Puking;
+        //typeOfQuest = QuestType.Puking;
         //typeOfQuest = QuestType.ThrowTheTrashOut;
         //typeOfQuest = QuestType.GetSomething;
 
