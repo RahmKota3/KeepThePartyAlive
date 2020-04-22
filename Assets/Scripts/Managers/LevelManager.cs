@@ -37,7 +37,6 @@ public class LevelManager : MonoBehaviour
             TimeManager.Instance.ResetCoroutines();
 
         CurrentScene = typeToLoad;
-        Debug.Log(CurrentScene);
 
         OnBeforeSceneLoad?.Invoke();
         OnBeforeSceneTypeLoaded?.Invoke(typeToLoad);

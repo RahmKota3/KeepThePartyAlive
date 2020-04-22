@@ -6,7 +6,7 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
 
-    public int GameplayTimeMinutes = 3;
+    public float GameplayTimeMinutes = 3;
 
     public float GameTime = 0;
 

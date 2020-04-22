@@ -132,11 +132,19 @@ public class PickupObjects : MonoBehaviour
             DropObject();
     }
 
+    void UnsubscribeMethods()
+    {
+        InputManager.Instance.OnPickUpButtonPressed -= PickUpOrDropObject;
+        InputManager.Instance.OnThrowButtonPressed -= ThrowObject;
+        LevelManager.Instance.OnBeforeSceneLoad -= UnsubscribeMethods;
+    }
+
     private void Awake()
     {
         playerAnimations = GetComponent<PlayerAnimations>();
 
         InputManager.Instance.OnPickUpButtonPressed += PickUpOrDropObject;
         InputManager.Instance.OnThrowButtonPressed += ThrowObject;
+        LevelManager.Instance.OnBeforeSceneLoad += UnsubscribeMethods;
     }
 }

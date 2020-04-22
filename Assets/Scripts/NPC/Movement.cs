@@ -15,9 +15,11 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Enterance" && stateMachine.CurrentState == NpcState.Angry)
+        if(other.gameObject.tag == "Enterance")
         {
-            ScoreManager.Instance.DecreaseScore();
+            if (stateMachine.CurrentState == NpcState.Angry)
+                ScoreManager.Instance.DecreaseScore();
+            
             NPCManager.Instance.RemoveNpcFromList(this.gameObject);
             Destroy(this.gameObject);
         }

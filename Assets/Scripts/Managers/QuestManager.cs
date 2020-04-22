@@ -56,7 +56,7 @@ public class QuestManager : MonoBehaviour
             (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 25, 5 });
 
         // Debug
-        //typeOfQuest = QuestType.Puking;
+        typeOfQuest = QuestType.Puking;
         //typeOfQuest = QuestType.ThrowTheTrashOut;
         //typeOfQuest = QuestType.GetSomething;
 
@@ -142,7 +142,7 @@ public class QuestManager : MonoBehaviour
 
         quest.Npc.GetComponent<QuestState>().ActiveQuest = quest;
 
-        Debug.Log("New quest: " + quest.TypeOfQuest);
+        //Debug.Log("New quest: " + quest.TypeOfQuest);
     }
 
     void CreateObjectsNeededForQuest(Quest quest)

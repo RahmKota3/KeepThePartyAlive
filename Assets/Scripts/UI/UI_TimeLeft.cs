@@ -19,12 +19,19 @@ public class UI_TimeLeft : MonoBehaviour
 
     IEnumerator UpdateTimeTextCoroutine()
     {
-        float timeLeftSeconds = (TimeManager.Instance.GameplayTimeMinutes * 60) - TimeManager.Instance.GameTime;
-        timeLeftText.text = "Time left: " + GetMinutes(timeLeftSeconds) + ":" + GetSecondsWithoutMinutes(timeLeftSeconds).ToString("##");
+        if (TimeManager.Instance.GameplayTimeMinutes > 100)
+        {
+            timeLeftText.text = "Time left: Infinite";
+        }
+        else
+        {
+            float timeLeftSeconds = (TimeManager.Instance.GameplayTimeMinutes * 60) - TimeManager.Instance.GameTime;
+            timeLeftText.text = "Time left: " + GetMinutes(timeLeftSeconds) + ":" + GetSecondsWithoutMinutes(timeLeftSeconds).ToString("0#");
 
-        yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1);
 
-        StartCoroutine(UpdateTimeTextCoroutine());
+            StartCoroutine(UpdateTimeTextCoroutine());
+        }
     }
 
     private void Start()
