@@ -20,7 +20,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] GameObject itemReceiverPrefab;
     [SerializeField] GameObject questMarkerPrefab;
     [SerializeField] GameObject trashPrefab;
-    [SerializeField] ObjectTrigger trashcan;
+    [SerializeField] List<ObjectTrigger> trashcans;
     [SerializeField] GameObject ui;
     [SerializeField] GameObject pukePrefab;
     [SerializeField] Jukebox jukebox;
@@ -57,7 +57,7 @@ public class QuestManager : MonoBehaviour
 
         // Debug
         //typeOfQuest = QuestType.Puking;
-        //typeOfQuest = QuestType.ThrowTheTrashOut;
+        typeOfQuest = QuestType.ThrowTheTrashOut;
         //typeOfQuest = QuestType.GetSomething;
 
         QuestState npcActiveQuest = randomNpc.gameObject.GetComponent<QuestState>();
@@ -122,7 +122,10 @@ public class QuestManager : MonoBehaviour
 
         if(quest.TypeOfQuest == QuestType.ThrowTheTrashOut)
         {
-            trashcan.QuestCreated(FinishQuest, quest);
+            foreach (ObjectTrigger trashcan in trashcans)
+            {
+                trashcan.QuestCreated(FinishQuest, quest);
+            }
         }
         else if(quest.TypeOfQuest == QuestType.ChangeMusic)
         {
