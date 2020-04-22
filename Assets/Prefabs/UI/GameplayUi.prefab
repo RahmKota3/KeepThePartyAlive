@@ -426,8 +426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1, y: -85}
-  m_SizeDelta: {x: 332.90002, y: 150}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 650, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1016434614
 CanvasRenderer:
@@ -457,7 +457,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Time left: 9:59'
+  m_text: 'Time left: Infinite'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5573a557659fc84eb3574ddcbfa129e, type: 2}
   m_sharedMaterial: {fileID: -4875839163256645167, guid: a5573a557659fc84eb3574ddcbfa129e,
@@ -527,10 +527,10 @@ MonoBehaviour:
   m_margin: {x: 0.0025396182, y: 20, z: 0.52027506, w: 0}
   m_textInfo:
     textComponent: {fileID: 1016434613}
-    characterCount: 15
+    characterCount: 19
     spriteCount: 0
     spaceCount: 2
-    wordCount: 4
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1

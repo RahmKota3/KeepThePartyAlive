@@ -10,6 +10,14 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGameplayScene()
     {
+        TimeManager.Instance.GameplayTimeMinutes = TimeManager.Instance.GameplayTimeInMinutes;
+        LevelManager.Instance.LoadScene(SceneType.Gameplay);
+    }
+
+    public void LoadGameplaySceneInfiniteMode()
+    {
+        Debug.Log("menu");
+        TimeManager.Instance.GameplayTimeMinutes = Mathf.Infinity;
         LevelManager.Instance.LoadScene(SceneType.Gameplay);
     }
 
@@ -34,6 +42,7 @@ public class MainMenu : MonoBehaviour
     void UnsubscribeMethods()
     {
         InputManager.Instance.OnPlayButtonPressed -= LoadGameplayScene;
+        InputManager.Instance.OnPlayInfiniteButtonPressed -= LoadGameplaySceneInfiniteMode;
         InputManager.Instance.OnControlsButtonPressed -= ShowHideControls;
         InputManager.Instance.OnExitButtonPressed -= ExitGame;
 
@@ -48,6 +57,7 @@ public class MainMenu : MonoBehaviour
         if (LevelManager.Instance.CurrentScene == SceneType.MainMenu)
         {
             InputManager.Instance.OnPlayButtonPressed += LoadGameplayScene;
+            InputManager.Instance.OnPlayInfiniteButtonPressed += LoadGameplaySceneInfiniteMode;
             InputManager.Instance.OnControlsButtonPressed += ShowHideControls;
             InputManager.Instance.OnExitButtonPressed += ExitGame;
 

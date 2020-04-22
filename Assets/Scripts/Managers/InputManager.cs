@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public Action OnGameRestartButtonPressed;
 
     public Action OnPlayButtonPressed;
+    public Action OnPlayInfiniteButtonPressed;
     public Action OnControlsButtonPressed;
     public Action OnExitButtonPressed;
     public Action OnMenuButtonPressed;
@@ -31,13 +32,13 @@ public class InputManager : MonoBehaviour
         if (Input.GetButtonDown("Throw"))
             OnThrowButtonPressed?.Invoke();
 
-        if (Input.GetButtonDown("RestartGame"))
-            OnRestartButtonPressed?.Invoke();
-
 
         // MainMenu
         if (Input.GetButtonDown("Play"))
             OnPlayButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("PlayInfinite"))
+            OnPlayInfiniteButtonPressed?.Invoke();
 
         if (Input.GetButtonDown("Controls"))
             OnControlsButtonPressed?.Invoke();

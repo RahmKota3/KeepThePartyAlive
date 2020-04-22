@@ -6,7 +6,8 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
 
-    public float GameplayTimeMinutes = 3;
+    public float GameplayTimeInMinutes = 3;
+    [HideInInspector] public float GameplayTimeMinutes = 3;
 
     public float GameTime = 0;
 
@@ -44,13 +45,10 @@ public class TimeManager : MonoBehaviour
         StopAllCoroutines();
         LevelManager.Instance.LoadScene(SceneType.WinScreen);
     }
-    
+
     private void Awake()
     {
         Instance = this;
-
-        //StartTimer(5, EndGame);
-        //StartTimer(gameplayTimeMinutes * 60, EndGame);
     }
 
     private void Update()

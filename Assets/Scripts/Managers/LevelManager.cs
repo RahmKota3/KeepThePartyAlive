@@ -77,9 +77,4 @@ public class LevelManager : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
-    private void Start()
-    {
-        InputManager.Instance.OnRestartButtonPressed += RestartLevel;
-    }
 }

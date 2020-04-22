@@ -1995,7 +1995,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.51779366, y: -0.0000027851256, z: 0.000004629405, w: -0.8555055}
+  m_LocalRotation: {x: -0.51779366, y: -0.0000028381999, z: 0.0000046615282, w: -0.8555055}
   m_LocalPosition: {x: -90, y: 8.73, z: -28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2101,7 +2101,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983774006}
-  m_LocalRotation: {x: -0.51779366, y: -0.0000027851256, z: 0.000004629405, w: -0.8555055}
+  m_LocalRotation: {x: -0.51779366, y: -0.0000028381999, z: 0.0000046615282, w: -0.8555055}
   m_LocalPosition: {x: -90, y: 8.73, z: -28.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -14870,59 +14870,6 @@ PrefabInstance:
       propertyPath: playerPickUpObjects
       value: 
       objectReference: {fileID: 7870037588234526409}
-    - target: {fileID: 1991946717196757080, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1991946717196757080, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157402207787349518, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8157402207787349518, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8902508245463859252, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8902508245463859252, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 909314501709574461, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7497038142565082450, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7497038142565082450, guid: 04cd396b58b128c43a7a8ba69fc0b4f7,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 879483681, guid: 04cd396b58b128c43a7a8ba69fc0b4f7, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 879483681, guid: 04cd396b58b128c43a7a8ba69fc0b4f7, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04cd396b58b128c43a7a8ba69fc0b4f7, type: 3}
 --- !u!1 &1495919564195595943 stripped

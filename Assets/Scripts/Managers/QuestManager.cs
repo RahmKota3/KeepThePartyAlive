@@ -53,10 +53,10 @@ public class QuestManager : MonoBehaviour
         }
 
         QuestType typeOfQuest = (QuestType)RandomExtension.ChooseFromMultipleWeighted(new List<int> { (int)QuestType.GetSomething,
-            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 60, 10, 25, 5 });
+            (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 55, 10, 25, 10 });
 
         // Debug
-        typeOfQuest = QuestType.Puking;
+        //typeOfQuest = QuestType.Puking;
         //typeOfQuest = QuestType.ThrowTheTrashOut;
         //typeOfQuest = QuestType.GetSomething;
 
