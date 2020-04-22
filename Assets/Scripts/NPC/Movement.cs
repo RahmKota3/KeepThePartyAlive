@@ -19,6 +19,8 @@ public class Movement : MonoBehaviour
         {
             if (stateMachine.CurrentState == NpcState.Angry)
                 ScoreManager.Instance.DecreaseScore();
+
+            QuestManager.Instance.NpcThrownAway(this.transform);
             
             NPCManager.Instance.RemoveNpcFromList(this.gameObject);
             Destroy(this.gameObject);

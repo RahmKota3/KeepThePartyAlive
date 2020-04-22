@@ -31,6 +31,24 @@ public class QuestManager : MonoBehaviour
     List<Quest> activeQuests = new List<Quest>();
     Dictionary<Quest, List<GameObject>> objectsToDestroyOnQuestFinish = new Dictionary<Quest, List<GameObject>>();
 
+    public void NpcThrownAway(Transform npc)
+    {
+        List<Quest> questsToFail = new List<Quest>();
+
+        foreach (Quest quest in activeQuests)
+        {
+            if(quest.Npc == npc)
+            {
+                questsToFail.Add(quest);
+            }
+        }
+
+        for (int i = 0; i < questsToFail.Count; i++)
+        {
+            FailQuestAfterNpcThrownAway(questsToFail[i]);
+        }
+    }
+
     Quest GetRandomizedQuest()
     {
         Transform randomNpc = NPCManager.Instance.NPCs[Random.Range(0, NPCManager.Instance.NPCs.Count)].transform;
@@ -56,7 +74,7 @@ public class QuestManager : MonoBehaviour
             (int)QuestType.ChangeMusic, (int)QuestType.ThrowTheTrashOut, (int)QuestType.Puking }, new List<int> { 55, 10, 25, 10 });
 
         // Debug
-        //typeOfQuest = QuestType.Puking;
+        typeOfQuest = QuestType.Puking;
         //typeOfQuest = QuestType.ThrowTheTrashOut;
         //typeOfQuest = QuestType.GetSomething;
 
@@ -179,8 +197,6 @@ public class QuestManager : MonoBehaviour
         if (finishedQuest == null)
             return;
 
-        Debug.Log("Finished quest: " + finishedQuest.TypeOfQuest);
-
         if (finishedQuest.TypeOfQuest == QuestType.ChangeMusic)
         {
             jukebox.ResetQuest();
@@ -204,8 +220,6 @@ public class QuestManager : MonoBehaviour
 
     void FailQuest(Quest questToFail)
     {
-        Debug.Log("Failed quest: " + questToFail.TypeOfQuest);
-
         CreateQuestFailObjects(questToFail);
 
         DestroyQuestObjects(questToFail);
@@ -226,9 +240,31 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void CreateQuestFailObjects(Quest quest)
+    void FailQuestAfterNpcThrownAway(Quest questToFail)
     {
-        if(quest.TypeOfQuest == QuestType.Puking)
+        CreateQuestFailObjects(questToFail, true);
+
+        DestroyQuestObjects(questToFail);
+
+        activeQuests.Remove(questToFail);
+
+        if (questToFail.Npc != null && questToFail.TypeOfQuest == QuestType.Puking)
+        {
+            questToFail.Npc.GetComponent<NPCAnimations>().ChangeAnimation(AnimationType.Dancing);
+        }
+
+        if (questToFail.Npc != null)
+        {
+            ChangeNpcsState(questToFail);
+            QuestState qState = questToFail.Npc.GetComponent<QuestState>();
+            if (qState.ActiveQuest != null)
+                qState.ActiveQuest.TypeOfQuest = QuestType.None;
+        }
+    }
+
+    void CreateQuestFailObjects(Quest quest, bool ignorePuking = false)
+    {
+        if(quest.TypeOfQuest == QuestType.Puking && quest.Npc != null && ignorePuking == false)
         {
             Instantiate(pukePrefab, quest.Npc.Find("TrashSpawnPosition").position, Quaternion.Euler(0, Random.Range(0f, 359f), 0));
         }
