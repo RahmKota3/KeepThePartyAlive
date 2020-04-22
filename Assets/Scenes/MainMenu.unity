@@ -403,6 +403,30 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2011729011, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
+      propertyPath: m_text
+      value: Start Time Trial Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011729011, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011729011, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011729011, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011729011, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011729011, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed283a42a14d33f4aa466b229744bdc2, type: 3}
 --- !u!1001 &6702195990987250468
