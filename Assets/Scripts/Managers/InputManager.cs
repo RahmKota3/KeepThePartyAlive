@@ -20,6 +20,9 @@ public class InputManager : MonoBehaviour
     public Action OnExitButtonPressed;
     public Action OnMenuButtonPressed;
     public Action OnRestartButtonPressed;
+    public Action OnChangeCameraButtonPressed;
+
+    public Action OnMainMenuButtonPressed;
 
     void CheckForInput()
     {
@@ -51,6 +54,12 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Restart"))
             OnRestartButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("ChangeCamera"))
+            OnChangeCameraButtonPressed?.Invoke();
+
+        if (Input.GetButtonDown("MainMenu"))
+            OnMainMenuButtonPressed?.Invoke();
     }
 
     private void Awake()

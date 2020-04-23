@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 6731626687120272149}
   - component: {fileID: -718306509974366500}
   - component: {fileID: -2947987269994013441}
+  - component: {fileID: -3223276077136612958}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -329,6 +330,18 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 83e3f9c1478cb3844852c4f9c1188743, type: 2}
   playerModel: {fileID: 7870478603722593962}
   pickedUpRigidbody: {fileID: 0}
+--- !u!114 &-3223276077136612958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7870037588196018221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0f1409a5fd19945ba1e0c2c5f17d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7870037588007353572
 PrefabInstance:
   m_ObjectHideFlags: 0
